@@ -41,12 +41,7 @@
                     </h3>
                 </div>
                 <div class="mc" id="order01">
-	<dl>
-		<dt>便利提醒：</dt>
-		<dd id="ordercount-waitPay" clstag="click|keycount|orderinfo|waitPay">待付款(0)</dd>
-		<dd id="ordercount-waitReceive" clstag="click|keycount|orderinfo|waitReceive">待确认收货(0)</dd>
-		<dd id="ordercount-waitPick" clstag="click|keycount|orderinfo|waitPick">待自提(0)</dd>
-	</dl>
+
 </div>            </div>
         	<div class="mod-main mod-comm lefta-box" id="order02">
         		<div class="mt">
