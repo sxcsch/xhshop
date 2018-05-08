@@ -8,7 +8,7 @@
 <meta http-equiv="Cache-Control" content="max-age=300" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>我的订单 - 爱上鲜花</title>
-<meta name="Keywords" content="java,淘淘java" />
+<meta name="Keywords" content="java,爱上鲜花java" />
 <meta name="description" content="在淘淘中找到了29910件java的类似商品，其中包含了“图书”，“电子书”，“教育音像”，“骑行运动”等类型的java的商品。" />
 <link rel="stylesheet" type="text/css" href="/css/base.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/myjd.common.css" media="all" />
@@ -41,12 +41,7 @@
                     </h3>
                 </div>
                 <div class="mc" id="order01">
-	<dl>
-		<dt>便利提醒：</dt>
-		<dd id="ordercount-waitPay" clstag="click|keycount|orderinfo|waitPay">待付款(0)</dd>
-		<dd id="ordercount-waitReceive" clstag="click|keycount|orderinfo|waitReceive">待确认收货(0)</dd>
-		<dd id="ordercount-waitPick" clstag="click|keycount|orderinfo|waitPick">待自提(0)</dd>
-	</dl>
+
 </div>            </div>
         	<div class="mod-main mod-comm lefta-box" id="order02">
         		<div class="mt">
