@@ -58,13 +58,6 @@ public class LeavelanguageService {
 	public PageData findById(PageData pd)throws Exception{
 		return (PageData)dao.findForObject("LeavelanguageMapper.findById", pd);
 	}
-	
-	/*
-	* 批量删除
-	*/
-	public void deleteAll(String[] ArrayDATA_IDS)throws Exception{
-		dao.delete("LeavelanguageMapper.deleteAll", ArrayDATA_IDS);
-	}
-	
+
 }
 

@@ -5,50 +5,46 @@
 	
 	<!-- 新增-->
 	<insert id="save" parameterType="pd">
-		insert into T_GOODS(
-			ID,	
-			NAME,	
-			DES,	
-			PRICE,	
-			TYPE,	
-			PICTURE,	
-			STATUS,	
-			GOODS_ID
+		insert into t_goods(
+			id,
+			name,
+			des,
+			price,
+			type,
+			picture,
+			status
 		) values (
-			#{ID},	
-			#{NAME},	
-			#{DES},	
-			#{PRICE},	
-			#{TYPE},	
-			#{PICTURE},	
-			#{STATUS},	
-			#{GOODS_ID}
+			NULL ,
+			#{name},
+			#{des},
+			#{price},
+			#{type},
+			#{picture},
+			#{status}
 		)
 	</insert>
 	
 	
 	<!-- 删除-->
 	<delete id="delete" parameterType="pd">
-		delete from T_GOODS
+		delete from t_goods
 		where 
-			GOODS_ID = #{GOODS_ID}
+			id = #{id}
 	</delete>
 	
 	
 	<!-- 修改 -->
 	<update id="edit" parameterType="pd">
-		update  T_GOODS
+		update  t_goods
 			set 
-				ID = #{ID},
-				NAME = #{NAME},
-				DES = #{DES},
-				PRICE = #{PRICE},
-				TYPE = #{TYPE},
-				PICTURE = #{PICTURE},
-				STATUS = #{STATUS},
-			GOODS_ID = GOODS_ID
+				name=#{name},
+				des=#{des},
+				price=#{price},
+				type=#{type},
+				picture=#{picture},
+				status=#{status}
 			where 
-				GOODS_ID = #{GOODS_ID}
+				id = #{id}
 	</update>
 	
 	
@@ -72,41 +68,29 @@
 	<!-- 列表 -->
 	<select id="datalistPage" parameterType="page" resultType="pd">
 		select
-				a.ID,	
-				a.NAME,	
-				a.DES,	
-				a.PRICE,	
-				a.TYPE,	
-				a.PICTURE,	
-				a.STATUS,	
-				a.GOODS_ID
-		from 
-				T_GOODS a
+				id,
+			name,
+			des,
+			price,
+			type,
+			picture,
+			status
+		from
+				t_goods
 	</select>
 	
 	<!-- 列表(全部) -->
 	<select id="listAll" parameterType="pd" resultType="pd">
 		select
-				a.ID,	
-				a.NAME,	
-				a.DES,	
-				a.PRICE,	
-				a.TYPE,	
-				a.PICTURE,	
-				a.STATUS,	
-				a.GOODS_ID
-		from 
-				T_GOODS a
+				id,
+			name,
+			des,
+			price,
+			type,
+			picture,
+			status
+		from
+				t_goods
 	</select>
-	
-	<!-- 批量删除 -->
-	<delete id="deleteAll" parameterType="String">
-		delete from T_GOODS
-		where 
-			GOODS_ID in
-		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
-                 #{item}
-		</foreach>
-	</delete>
-	
+
 </mapper>

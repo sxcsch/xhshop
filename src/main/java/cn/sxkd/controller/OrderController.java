@@ -72,21 +72,21 @@ public class OrderController extends BaseController {
 		ModelAndView mv = this.getModelAndView();
 		try {
 			mv.setViewName("my-order-comment");
-//			TUser tUser = getSessionUserName();
-//			if (tUser!=null){
-//				PageData pageData = new PageData();
-//				pageData.put("user_id",tUser.getUsersid());
-//				List<PageData> list = orderService.findOrderByUserId(pageData);
-//				if (list!=null&&list.size()>0){
-//					for (PageData p:list){
-//						pageData.put("id",p.get("goods_id"));
-//						PageData good = goodsService.findById(pageData);
-//						p.put("good",good);
-//					}
-//				}
-//
-//				mv.addObject("list",list);
-//			}
+			TUser tUser = getSessionUserName();
+			if (tUser!=null){
+				PageData pageData = new PageData();
+				pageData.put("user_id",tUser.getUsersid());
+				List<PageData> list = orderService.findOrderByUserId(pageData);
+				if (list!=null&&list.size()>0){
+					for (PageData p:list){
+						pageData.put("id",p.get("goods_id"));
+						PageData good = goodsService.findById(pageData);
+						p.put("good",good);
+					}
+				}
+
+				mv.addObject("list",list);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -103,14 +103,6 @@ public class OrderController extends BaseController {
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
-		pd.put("ORDER_ID", this.get32UUID());	//主键
-		pd.put("ID", "");	//主键
-		pd.put("NUM", "");	//订单编号
-		pd.put("USER_ID", "");	//用户ID
-		pd.put("TYPE_ID", "");	//类型ID
-		pd.put("STATUS", "");	//状态
-		pd.put("PRICE", "");	//价格
-		pd.put("GOODS_ID", "");	//商品ID
 		orderService.save(pd);
 		mv.addObject("msg","success");
 		mv.setViewName("save_result");

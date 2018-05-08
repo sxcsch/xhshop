@@ -5,85 +5,69 @@
 	
 	<!-- 新增-->
 	<insert id="save" parameterType="pd">
-		insert into T_LEAVELANGUAGELEAVELANGUAGECONTROLLER(
-			ID,	
-			DES,	
-			USER_ID,	
-			LEAVELANGUAGECONTROLLER_ID
+		insert into t_leavelanguage(
+			id,
+			des,
+			user_id
 		) values (
-			#{ID},	
-			#{DES},	
-			#{USER_ID},	
-			#{LEAVELANGUAGECONTROLLER_ID}
+			NULL ,
+			#{des},
+			#{user_id}
 		)
 	</insert>
 	
 	
 	<!-- 删除-->
 	<delete id="delete" parameterType="pd">
-		delete from T_LEAVELANGUAGELEAVELANGUAGECONTROLLER
+		delete from t_leavelanguage
 		where 
-			LEAVELANGUAGECONTROLLER_ID = #{LEAVELANGUAGECONTROLLER_ID}
+			id = #{id}
 	</delete>
 	
 	
 	<!-- 修改 -->
 	<update id="edit" parameterType="pd">
-		update  T_LEAVELANGUAGELEAVELANGUAGECONTROLLER
+		update  t_leavelanguage
 			set 
-				ID = #{ID},
-				DES = #{DES},
-				USER_ID = #{USER_ID},
-			LEAVELANGUAGECONTROLLER_ID = LEAVELANGUAGECONTROLLER_ID
-			where 
-				LEAVELANGUAGECONTROLLER_ID = #{LEAVELANGUAGECONTROLLER_ID}
+				des = #{des},
+				user_id = #{user_id}
+			where
+				id = #{id}
 	</update>
 	
 	
 	<!-- 通过ID获取数据 -->
 	<select id="findById" parameterType="pd" resultType="pd">
 		select 
-			ID,	
-			DES,	
-			USER_ID,	
-			LEAVELANGUAGECONTROLLER_ID
+			id,
+			des,
+			user_id
 		from 
-			T_LEAVELANGUAGELEAVELANGUAGECONTROLLER
+			t_leavelanguage
 		where 
-			LEAVELANGUAGECONTROLLER_ID = #{LEAVELANGUAGECONTROLLER_ID}
+			id = #{id}
 	</select>
 	
 	
 	<!-- 列表 -->
 	<select id="datalistPage" parameterType="page" resultType="pd">
 		select
-				a.ID,	
-				a.DES,	
-				a.USER_ID,	
-				a.LEAVELANGUAGECONTROLLER_ID
+				id,
+			des,
+			user_id
 		from 
-				T_LEAVELANGUAGELEAVELANGUAGECONTROLLER a
+				t_leavelanguage
 	</select>
 	
 	<!-- 列表(全部) -->
 	<select id="listAll" parameterType="pd" resultType="pd">
 		select
-				a.ID,	
-				a.DES,	
-				a.USER_ID,	
-				a.LEAVELANGUAGECONTROLLER_ID
+				id,
+			des,
+			user_id
 		from 
-				T_LEAVELANGUAGELEAVELANGUAGECONTROLLER a
+				t_leavelanguage
 	</select>
 	
-	<!-- 批量删除 -->
-	<delete id="deleteAll" parameterType="String">
-		delete from T_LEAVELANGUAGELEAVELANGUAGECONTROLLER
-		where 
-			LEAVELANGUAGECONTROLLER_ID in
-		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
-                 #{item}
-		</foreach>
-	</delete>
-	
+
 </mapper>

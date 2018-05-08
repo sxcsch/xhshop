@@ -5,115 +5,102 @@
 	
 	<!-- 新增-->
 	<insert id="save" parameterType="pd">
-		insert into T_ORDERORDER(
-			ID,	
-			NUM,	
-			USER_ID,	
-			TYPE_ID,	
-			TAKE_INFO,	
-			STATUS,	
-			PRICE,	
-			GOODS_ID,	
-			AMOUNT,	
-			ORDER_ID
+		insert into t_orders(
+			id,
+			num,
+			user_id,
+			type_id,
+			take_info,
+			status,
+			price,
+			goods_id,
+			amount
 		) values (
-			#{ID},	
-			#{NUM},	
-			#{USER_ID},	
-			#{TYPE_ID},	
-			#{TAKE_INFO},	
-			#{STATUS},	
-			#{PRICE},	
-			#{GOODS_ID},	
-			#{AMOUNT},	
-			#{ORDER_ID}
+			null,
+			#{num},
+			#{user_id},
+			#{type_id},
+			#{take_info},
+			#{status},
+			#{price},
+			#{goods_id},
+			#{amount}
 		)
 	</insert>
 	
 	
 	<!-- 删除-->
 	<delete id="delete" parameterType="pd">
-		delete from T_ORDERORDER
+		delete from t_orders
 		where 
-			ORDER_ID = #{ORDER_ID}
+			id = #{id}
 	</delete>
 	
 	
 	<!-- 修改 -->
 	<update id="edit" parameterType="pd">
-		update  T_ORDERORDER
+		update  t_orders
 			set 
-				TAKE_INFO = #{TAKE_INFO},
-				AMOUNT = #{AMOUNT},
-			ORDER_ID = ORDER_ID
+					type_id=#{type_id},
+				  take_info=#{take_info},
+					  status=#{status},
+					goods_id=#{goods_id},
+					  amount=#{amount}
 			where 
-				ORDER_ID = #{ORDER_ID}
+				id = #{id}
 	</update>
 	
 	
 	<!-- 通过ID获取数据 -->
 	<select id="findById" parameterType="pd" resultType="pd">
 		select 
-			ID,	
-			NUM,	
-			USER_ID,	
-			TYPE_ID,	
-			TAKE_INFO,	
-			STATUS,	
-			PRICE,	
-			GOODS_ID,	
-			AMOUNT,	
-			ORDER_ID
+			id,
+			num,
+			user_id,
+			type_id,
+			take_info,
+			status,
+			price,
+			goods_id,
+			amount
 		from 
-			T_ORDERORDER
+			t_orders
 		where 
-			ORDER_ID = #{ORDER_ID}
+			id = #{id}
 	</select>
 	
 	
 	<!-- 列表 -->
 	<select id="datalistPage" parameterType="page" resultType="pd">
 		select
-				a.ID,	
-				a.NUM,	
-				a.USER_ID,	
-				a.TYPE_ID,	
-				a.TAKE_INFO,	
-				a.STATUS,	
-				a.PRICE,	
-				a.GOODS_ID,	
-				a.AMOUNT,	
-				a.ORDER_ID
-		from 
-				T_ORDERORDER a
+				a.id,
+				a.num,
+				a.user_id,
+				a.type_id,
+				a.take_info,
+				a.status,
+				a.price,
+				a.goods_id,
+				a.amount
+		from
+				t_orders a
 	</select>
 	
 	<!-- 列表(全部) -->
 	<select id="listAll" parameterType="pd" resultType="pd">
 		select
-				a.ID,	
-				a.NUM,	
-				a.USER_ID,	
-				a.TYPE_ID,	
-				a.TAKE_INFO,	
-				a.STATUS,	
-				a.PRICE,	
-				a.GOODS_ID,	
-				a.AMOUNT,	
-				a.ORDER_ID
-		from 
-				T_ORDERORDER a
+				a.id,
+				a.num,
+				a.user_id,
+				a.type_id,
+				a.take_info,
+				a.status,
+				a.price,
+				a.goods_id,
+				a.amount
+		from
+				t_orders a
 	</select>
-	
-	<!-- 批量删除 -->
-	<delete id="deleteAll" parameterType="String">
-		delete from T_ORDERORDER
-		where 
-			ORDER_ID in
-		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
-                 #{item}
-		</foreach>
-	</delete>
 
 	<select id="findOrderByUserId" parameterType="pd" resultType="pd">
 		select
