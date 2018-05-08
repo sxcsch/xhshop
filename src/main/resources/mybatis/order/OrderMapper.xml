@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OrderMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into T_ORDERORDER(
+			ID,	
+			NUM,	
+			USER_ID,	
+			TYPE_ID,	
+			TAKE_INFO,	
+			STATUS,	
+			PRICE,	
+			GOODS_ID,	
+			AMOUNT,	
+			ORDER_ID
+		) values (
+			#{ID},	
+			#{NUM},	
+			#{USER_ID},	
+			#{TYPE_ID},	
+			#{TAKE_INFO},	
+			#{STATUS},	
+			#{PRICE},	
+			#{GOODS_ID},	
+			#{AMOUNT},	
+			#{ORDER_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from T_ORDERORDER
+		where 
+			ORDER_ID = #{ORDER_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  T_ORDERORDER
+			set 
+				TAKE_INFO = #{TAKE_INFO},
+				AMOUNT = #{AMOUNT},
+			ORDER_ID = ORDER_ID
+			where 
+				ORDER_ID = #{ORDER_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			ID,	
+			NUM,	
+			USER_ID,	
+			TYPE_ID,	
+			TAKE_INFO,	
+			STATUS,	
+			PRICE,	
+			GOODS_ID,	
+			AMOUNT,	
+			ORDER_ID
+		from 
+			T_ORDERORDER
+		where 
+			ORDER_ID = #{ORDER_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.ID,	
+				a.NUM,	
+				a.USER_ID,	
+				a.TYPE_ID,	
+				a.TAKE_INFO,	
+				a.STATUS,	
+				a.PRICE,	
+				a.GOODS_ID,	
+				a.AMOUNT,	
+				a.ORDER_ID
+		from 
+				T_ORDERORDER a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.ID,	
+				a.NUM,	
+				a.USER_ID,	
+				a.TYPE_ID,	
+				a.TAKE_INFO,	
+				a.STATUS,	
+				a.PRICE,	
+				a.GOODS_ID,	
+				a.AMOUNT,	
+				a.ORDER_ID
+		from 
+				T_ORDERORDER a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from T_ORDERORDER
+		where 
+			ORDER_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+
+	<select id="findOrderByUserId" parameterType="pd" resultType="pd">
+		select
+				a.id,
+				a.num,
+				a.user_id,
+				a.type_id,
+				a.take_info,
+				a.status,
+				a.price,
+				a.goods_id,
+				a.amount
+		from
+				t_orders a
+		where
+				a.user_id = #{user_id}
+	</select>
+	
+</mapper>

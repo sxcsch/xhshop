@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="TUserMapper" >
+  <resultMap id="BaseResultMap" type="cn.sxkd.entity.TUser" >
+    <id column="usersId" property="usersid" jdbcType="INTEGER" />
+    <result column="sortName" property="sortname" jdbcType="VARCHAR" />
+    <result column="userPass" property="userpass" jdbcType="VARCHAR" />
+    <result column="usersRePass" property="usersrepass" jdbcType="VARCHAR" />
+    <result column="usersPassQuestion" property="userspassquestion" jdbcType="VARCHAR" />
+    <result column="usersPassReply" property="userspassreply" jdbcType="VARCHAR" />
+    <result column="usersTrueName" property="userstruename" jdbcType="VARCHAR" />
+    <result column="usersAddrss" property="usersaddrss" jdbcType="VARCHAR" />
+    <result column="usersPhone" property="usersphone" jdbcType="VARCHAR" />
+    <result column="usersEmail" property="usersemail" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    usersId, sortName, userPass, usersRePass, usersPassQuestion, usersPassReply, usersTrueName,
+    usersAddrss, usersPhone, usersEmail
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pd" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="pd" >
+    select
+    usersId, sortName, userPass, usersRePass, usersPassQuestion, usersPassReply, usersTrueName,
+    usersAddrss, usersPhone, usersEmail
+    from t_user
+    where
+    1=1
+    AND
+    sortName = #{sortname}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="pd" >
+    delete from t_user
+    where usersId = #{usersid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pd" >
+    delete from t_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pd" >
+    insert into t_user (usersId, sortName, userPass,
+      usersRePass, usersPassQuestion, usersPassReply,
+      usersTrueName, usersAddrss, usersPhone,
+      usersEmail)
+    values (#{usersid,jdbcType=INTEGER}, #{sortname,jdbcType=VARCHAR}, #{userpass,jdbcType=VARCHAR},
+      #{usersrepass,jdbcType=VARCHAR}, #{userspassquestion,jdbcType=VARCHAR}, #{userspassreply,jdbcType=VARCHAR},
+      #{userstruename,jdbcType=VARCHAR}, #{usersaddrss,jdbcType=VARCHAR}, #{usersphone,jdbcType=VARCHAR},
+      #{usersemail,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="pd" >
+    insert into t_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="usersid != null" >
+        usersId,
+      </if>
+      <if test="sortname != null" >
+        sortName,
+      </if>
+      <if test="userpass != null" >
+        userPass,
+      </if>
+      <if test="usersrepass != null" >
+        usersRePass,
+      </if>
+      <if test="userspassquestion != null" >
+        usersPassQuestion,
+      </if>
+      <if test="userspassreply != null" >
+        usersPassReply,
+      </if>
+      <if test="userstruename != null" >
+        usersTrueName,
+      </if>
+      <if test="usersaddrss != null" >
+        usersAddrss,
+      </if>
+      <if test="usersphone != null" >
+        usersPhone,
+      </if>
+      <if test="usersemail != null" >
+        usersEmail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="usersid != null" >
+        #{usersid,jdbcType=INTEGER},
+      </if>
+      <if test="sortname != null" >
+        #{sortname,jdbcType=VARCHAR},
+      </if>
+      <if test="userpass != null" >
+        #{userpass,jdbcType=VARCHAR},
+      </if>
+      <if test="usersrepass != null" >
+        #{usersrepass,jdbcType=VARCHAR},
+      </if>
+      <if test="userspassquestion != null" >
+        #{userspassquestion,jdbcType=VARCHAR},
+      </if>
+      <if test="userspassreply != null" >
+        #{userspassreply,jdbcType=VARCHAR},
+      </if>
+      <if test="userstruename != null" >
+        #{userstruename,jdbcType=VARCHAR},
+      </if>
+      <if test="usersaddrss != null" >
+        #{usersaddrss,jdbcType=VARCHAR},
+      </if>
+      <if test="usersphone != null" >
+        #{usersphone,jdbcType=VARCHAR},
+      </if>
+      <if test="usersemail != null" >
+        #{usersemail,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pd" resultType="pd" >
+    select count(*) from t_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_user
+    <set >
+      <if test="record.usersid != null" >
+        usersId = #{record.usersid,jdbcType=INTEGER},
+      </if>
+      <if test="record.sortname != null" >
+        sortName = #{record.sortname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userpass != null" >
+        userPass = #{record.userpass,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usersrepass != null" >
+        usersRePass = #{record.usersrepass,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userspassquestion != null" >
+        usersPassQuestion = #{record.userspassquestion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userspassreply != null" >
+        usersPassReply = #{record.userspassreply,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userstruename != null" >
+        usersTrueName = #{record.userstruename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usersaddrss != null" >
+        usersAddrss = #{record.usersaddrss,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usersphone != null" >
+        usersPhone = #{record.usersphone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usersemail != null" >
+        usersEmail = #{record.usersemail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_user
+    set usersId = #{record.usersid,jdbcType=INTEGER},
+      sortName = #{record.sortname,jdbcType=VARCHAR},
+      userPass = #{record.userpass,jdbcType=VARCHAR},
+      usersRePass = #{record.usersrepass,jdbcType=VARCHAR},
+      usersPassQuestion = #{record.userspassquestion,jdbcType=VARCHAR},
+      usersPassReply = #{record.userspassreply,jdbcType=VARCHAR},
+      usersTrueName = #{record.userstruename,jdbcType=VARCHAR},
+      usersAddrss = #{record.usersaddrss,jdbcType=VARCHAR},
+      usersPhone = #{record.usersphone,jdbcType=VARCHAR},
+      usersEmail = #{record.usersemail,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pd" >
+    update t_user
+    <set >
+      <if test="sortname != null" >
+        sortName = #{sortname,jdbcType=VARCHAR},
+      </if>
+      <if test="userpass != null" >
+        userPass = #{userpass,jdbcType=VARCHAR},
+      </if>
+      <if test="usersrepass != null" >
+        usersRePass = #{usersrepass,jdbcType=VARCHAR},
+      </if>
+      <if test="userspassquestion != null" >
+        usersPassQuestion = #{userspassquestion,jdbcType=VARCHAR},
+      </if>
+      <if test="userspassreply != null" >
+        usersPassReply = #{userspassreply,jdbcType=VARCHAR},
+      </if>
+      <if test="userstruename != null" >
+        usersTrueName = #{userstruename,jdbcType=VARCHAR},
+      </if>
+      <if test="usersaddrss != null" >
+        usersAddrss = #{usersaddrss,jdbcType=VARCHAR},
+      </if>
+      <if test="usersphone != null" >
+        usersPhone = #{usersphone,jdbcType=VARCHAR},
+      </if>
+      <if test="usersemail != null" >
+        usersEmail = #{usersemail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where usersId = #{usersid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pd" >
+    update t_user
+    set sortName = #{sortname,jdbcType=VARCHAR},
+      userPass = #{userpass,jdbcType=VARCHAR},
+      usersRePass = #{usersrepass,jdbcType=VARCHAR},
+      usersPassQuestion = #{userspassquestion,jdbcType=VARCHAR},
+      usersPassReply = #{userspassreply,jdbcType=VARCHAR},
+      usersTrueName = #{userstruename,jdbcType=VARCHAR},
+      usersAddrss = #{usersaddrss,jdbcType=VARCHAR},
+      usersPhone = #{usersphone,jdbcType=VARCHAR},
+      usersEmail = #{usersemail,jdbcType=VARCHAR}
+    where usersId = #{usersid,jdbcType=INTEGER}
+  </update>
+  <select id="selectList" resultMap="BaseResultMap" parameterType="pd">
+    SELECT
+    <include refid="Base_Column_List" />
+    from t_user
+  </select>
+</mapper>
