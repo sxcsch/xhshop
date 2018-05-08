@@ -22,7 +22,9 @@
 <jsp:include page="commons/header.jsp" />
 <!-- header end -->
 <div class="w main">
-	<div class="crumb">全部结果&nbsp;&gt;&nbsp;<strong>"${query}"</strong></div>
+	<c:if test="${query == ''}">
+		<div class="crumb">全部结果&nbsp;&gt;&nbsp;<strong>"${query}"</strong></div>
+	</c:if>
 <div class="clr"></div>
 <div class="m clearfix" id="bottom_pager">
 <div  id="pagin-btm" class="pagin fr" clstag="search|keycount|search|pre-page2">
@@ -35,28 +37,28 @@
 	<a href="search?keyword=java&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=6">6</a>
 	<span class="text">…</span>
 	<a href="search?keyword=java&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=2" class="next">下一页<b></b></a>
-	<span class="page-skip"><em>&nbsp;&nbsp;共${totalPages}页&nbsp;&nbsp;&nbsp;&nbsp;到第</em></span>
+	<span class="page-skip"><em>&nbsp;&nbsp;共${page.totalPage}页&nbsp;&nbsp;&nbsp;&nbsp;共${page.totalResult}条</em></span>
 </div>
 </div>
 <div class="m psearch " id="plist">
 <ul class="list-h clearfix" tpl="2">
-<c:forEach items="${itemList}" var="item">
+<c:forEach items="${pds}" var="item">
 <li class="item-book" bookid="11078102">
 	<div class="p-img">
 		<a target="_blank" href="/item/${item.id }.html">
-			<img width="160" height="160" data-img="1" data-lazyload="${item.image}" />
+			<img src="data:image/png;base64,${item.picture}" width="160" height="160" data-img="1" data-lazyload="" />
 		</a>
 	</div>
 	<div class="p-name">
 		<a target="_blank" href="/item/${item.id }.html">
-			${item.title}
+			${item.name}
 		</a>
 	</div>
 	<div class="p-price">
-		<i>淘淘价：</i>
-		<strong>￥<fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" value="${item.price / 100 }"/></strong>
+		<i>鲜花价：</i>
+		<strong>￥<fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" value="${item.price}"/></strong>
 	</div>
-	<div class="service">由 淘淘 发货</div>
+	<div class="service">由爱上鲜花发货</div>
 	<div class="extra">
 		<span class="star"><span class="star-white"><span class="star-yellow h5">&nbsp;</span></span></span>
 	</div>

@@ -20,7 +20,7 @@ public class Pic {
         //读取图片字节数组
         try
         {
-            in = new FileInputStream("C:\\Users\\Administrator\\Desktop\\花\\6.jpg");
+            in = new FileInputStream("C:\\Users\\Administrator\\Desktop\\花\\0.jpg");
             data = new byte[in.available()];
             in.read(data);
             in.close();

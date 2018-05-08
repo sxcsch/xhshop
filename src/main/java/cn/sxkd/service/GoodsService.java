@@ -43,7 +43,12 @@ public class GoodsService {
 	public List<PageData> list(Page page)throws Exception{
 		return (List<PageData>)dao.findForList("GoodsMapper.datalistPage", page);
 	}
-	
+	/*
+	*类型列表
+	*/
+	public List<PageData> findByGoodType(Page pd)throws Exception{
+		return (List<PageData>)dao.findForList("GoodsMapper.findByGoodTypelistPage", pd);
+	}
 	/*
 	*列表(全部)
 	*/

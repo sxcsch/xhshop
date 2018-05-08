@@ -7,9 +7,9 @@
 <head>
 <meta http-equiv="Cache-Control" content="max-age=300" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>我的信息 - 淘淘</title>
-<meta name="Keywords" content="java,淘淘java" />
-<meta name="description" content="在淘淘中找到了29910件java的类似商品，其中包含了“图书”，“电子书”，“教育音像”，“骑行运动”等类型的java的商品。" />
+<title>我的信息 - 爱上鲜花</title>
+<meta name="Keywords" content="" />
+<meta name="description" content="" />
 <link rel="stylesheet" type="text/css" href="/css/base.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/myjd.common.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/myjd.info.css" media="all" />
@@ -29,74 +29,72 @@
         <div id="content" class="c-3-5">
             
 			<div class="mod-main">
+                <form action="/user/update" id="user_form" method="post">
+                    <input type="hidden" name="usersid" value="${user.usersid}"/>
                         <div class="mt">
                             <ul class="extra-l">
-                                <li class="fore-1"><a class="curr" href="http://i.jd.com/user/info">基本信息</a></li>
+                                <li class="fore-1"><a class="curr" href="#">基本信息</a></li>
                             </ul>
                         </div>
                         <div class="mc">
                             <div class="user-set userset-lcol">
                                 <div class="form">
                                     <div class="item">
-                                        <span class="label"><em>*</em>昵称：</span>
+                                        <span class="label"><em>*</em>用户名：</span>
                                         <div class="fl">
-                                            <input type="text" class="itxt" maxlength="20" id="nickName" name="userVo.nickName" value="林中守望者">
+                                            <input type="text" class="itxt" maxlength="20" id="sortname" name="sortname" value="${user.sortname}">
                                             <div class="clr"></div><div class="prompt-06"><span id="nickName_msg"></span></div>
                                         </div>
                                     </div>
-
-									<div class="item">
-									<span class="label">邮箱：</span>
-									<div class="fl">
-																				<div>
-											<strong>    zh*****_j@163.com
-</strong><a target="_blank" class="ml5 ftx05" href="http://safe.jd.com/validate/updateMail">修改</a><span class="ftx-03">&nbsp;&nbsp;&nbsp;已验证</span>
-										</div>
-																			</div>
-
-									<div class="clr"></div>
-								</div>
-									
                                     <div class="item">
-                                        <span class="label">真实姓名：</span>
+                                        <span class="label"><em>*</em>真实姓名：</span>
                                         <div class="fl">
-                                            <input type="text" class="itxt" maxlength="20" name="userVo.realName" id="realName" value="张志君">
+                                            <input type="text" class="itxt" maxlength="20" name="userstruename" id="userstruename" value="${user.userstruename}">
                                             <div class="clr"></div><div class="prompt-06"><span id="realName_msg"></span></div>
                                         </div>
                                     </div>
                                     <div class="item">
-                                        <span class="label">电话：</span>
+                                        <span class="label"><em>*</em>电话：</span>
                                         <div class="fl">
-                                            <input type="text" class="itxt" maxlength="20" name="userVo.realName" id="realName" value="张志君">
+                                            <input type="text" class="itxt" maxlength="20" name="usersphone" id="usersphone" value="${user.usersphone}">
                                             <div class="clr"></div><div class="prompt-06"><span id="realName_msg"></span></div>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <span class="label">密保问题：</span>
                                         <div class="fl">
-                                            <input type="text" class="itxt" maxlength="20" name="userVo.realName" id="realName" value="张志君">
+                                            <input type="text" class="itxt" maxlength="20" name="userspassquestion" id="userspassquestion" value="${user.userspassquestion}">
                                             <div class="clr"></div><div class="prompt-06"><span id="realName_msg"></span></div>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <span class="label">密保答案：</span>
                                         <div class="fl">
-                                            <input type="text" class="itxt" maxlength="20" name="userVo.realName" id="realName" value="张志君">
+                                            <input type="text" class="itxt" maxlength="20" name="userspassreply" id="userspassreply" value="${user.userspassreply}">
                                             <div class="clr"></div><div class="prompt-06"><span id="realName_msg"></span></div>
                                         </div>
                                     </div>
                                     <div class="item">
-                                        <span class="label">地址：</span>
+                                        <span class="label">邮箱：</span>
                                         <div class="fl">
-                                            <input type="text" class="itxt itxt1" name="userVo.address" id="address" value="上海徐汇区内环以内漕溪北路737弄2号楼3201室">
+                                            <div>
+                                                <input type="text" class="itxt" name="usersemail" id="usersemail" value="${user.usersemail}">
+                                                <span class="ftx-03">&nbsp;&nbsp;&nbsp;已验证</span>
+                                            </div>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="item">
+                                        <span class="label"><em>*</em>地址：</span>
+                                        <div class="fl">
+                                            <input type="text" class="itxt itxt1" name="usersaddrss" id="usersaddrss" value="${user.usersaddrss}">
 										    <div class="clr"></div><div class="prompt-06"><span id="address_msg"></span></div>
                                         </div>
                                     </div>
+
                                     <div class="item">
                                         <span class="label">&nbsp;</span>
                                         <div class="fl">
-                                            <input id="code" value="100294" style="display:none">
-                                            <input id="rkey" value="736e6f5f315f67657455736572496e666f6468313839313030323934" style="display:none">
                                             <a href="javascript:void(0)" class="btn-5" onclick="updateUserInfo()">提交</a>
                                         </div>
                                     </div>
@@ -104,21 +102,20 @@
                             </div>
                             <div id="user-info">
                                 <div class="info-m">
-									<div><b>用户名：dh189</b></div>
+									<div><b>用户名：${user.sortname}</b></div>
                                     <div class="u-level">
 										<span class="rank r4">
-											<s></s>金牌会员
+											<b>等级：</b>金牌会员
 										</span>
                                     </div>
-                                    <div class="shop-level">购物行为评级：<span><a target="_blank" href="http://help.jd.com/help/question-57.html#help2173">
-										<s id="userCredit" class="rank-sh rank-sh01 rank-sh02"></s></a></span></div>
-                                    <div>会员类型：个人用户</div>
+                                    <div><b>会员类型：</b>个人用户</div>
                                 </div>
                             </div>
                             <div class="clr"></div>
 							
                         </div>
-                    </div>            
+                    </form>
+                </div>
         </div>
     </div>
     <div id="left" class="g-3-5 c-0">
@@ -137,9 +134,10 @@
             </dl>
             <dl class="fore3">
                 <dt>
-                    <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="">我的信息</a>
+                    <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/user/showMyUser">我的信息</a>
                 </dt>
             </dl>
+
         </div>
     </div>
     <span class="clr"></span>

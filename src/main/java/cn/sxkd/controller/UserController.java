@@ -40,14 +40,13 @@ public class UserController extends BaseController{
     @RequestMapping("/showMyUser")
     public ModelAndView user(){
         ModelAndView mv = this.getModelAndView();
-//        TUser user = getSessionUserName();
-//        if (user!=null) {
-//            mv.addObject("user", user);
-//            mv.setViewName("index");
-//        }else {
-//            mv.setViewName("login");
-//        }
-        mv.setViewName("my-info");
+        TUser user = getSessionUserName();
+        if (user!=null) {
+            mv.addObject("user", user);
+            mv.setViewName("my-info");
+        }else {
+            mv.setViewName("login");
+        }
         return mv;
     }
 
@@ -101,6 +100,8 @@ public class UserController extends BaseController{
         PageData pd = this.getPageData();
         try{
             userService.updateUserById(pd);
+            TUser tUser= userService.findUserById(pd);
+            setSession("user",tUser);
         }catch (Exception e){
             logger.error(e);
         }

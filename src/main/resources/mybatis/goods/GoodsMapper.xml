@@ -63,6 +63,21 @@
 		where 
 			id = #{id}
 	</select>
+
+	<select id="findByGoodTypelistPage" parameterType="page" resultType="pd">
+		select
+			id,
+			name,
+			des,
+			price,
+			type,
+			picture,
+			status
+		from
+			t_goods
+		where
+			type = #{pd.type}
+	</select>
 	
 	
 	<!-- 列表 -->

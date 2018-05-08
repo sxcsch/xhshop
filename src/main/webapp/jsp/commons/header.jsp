@@ -47,43 +47,43 @@
 				<div id="_JD_ALLSORT" class="mc">
 					<div class="item fore1">
 						<span data-split="1"><h3>
-								<a href="/products/1.html">花束</a>
+								<a href="/goods/searchType?type=0">花束</a>
 							</h3>
 							<s></s></span>
 					</div>
 					<div class="item fore2">
 						<span data-split="1"><h3>
-								<a href="/products/74.html">花盒</a>
+								<a href="/goods/searchType?type=1">花盒</a>
 							</h3>
 							<s></s></span>
 					</div>
 					<div class="item fore3">
 						<span data-split="1"><h3>
-								<a href="/products/161.html">瓶花</a>
+								<a href="/goods/searchType?type=2">瓶花</a>
 							</h3>
 							<s></s></span>
 					</div>
 					<div class="item fore4">
 						<span data-split="1"><h3>
-								<a href="/products/249.html">精品鲜花</a>
+								<a href="/goods/searchType?type=3">精品鲜花</a>
 							</h3>
 							<s></s></span>
 					</div>
 					<div class="item fore5">
 						<span data-split="1"><h3>
-								<a href="/products/290.html">果篮</a>
+								<a href="/goods/searchType?type=4">果篮</a>
 							</h3>
 							<s></s></span>
 					</div>
 					<div class="item fore6">
 						<span data-split="1"><h3>
-								<a href="/products/296.html">桌面花篮</a>
+								<a href="/goods/searchType?type=5">桌面花篮</a>
 							</h3>
 							<s></s></span>
 					</div>
 					<div class="item fore7">
 						<span data-split="1"><h3>
-								<a href="/products/378.html">开业花篮</a>
+								<a href="/goods/searchType?type=6">开业花篮</a>
 							</h3>
 							<s></s></span>
 					</div>

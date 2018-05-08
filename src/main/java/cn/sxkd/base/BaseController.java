@@ -72,6 +72,7 @@ public class BaseController {
 		try{
 			 HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
 			 TUser map =  (TUser) WebUtils.getSessionAttribute(request,"user");
+
 			 return map;
 		 }catch(Exception e){
 			 e.printStackTrace();

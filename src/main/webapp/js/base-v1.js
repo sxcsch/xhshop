@@ -1,6 +1,20 @@
  /*
  Date: 2018-05-06
  */
+ function updateUserInfo() {
+
+     var queryArray = $("#user_form").serializeArray();
+
+     $.ajax({
+         type: "POST",
+         url: "/user/update.do",
+         data: queryArray,
+         dataType : "json",
+         success: function(respMsg){
+             location.href = "user/showMyUser";
+         }
+     });
+ }
 function login() {
     return location.href = "user/showLogin";
 }

@@ -34,7 +34,26 @@ public class GoodsController extends BaseController {
 	
 	@Resource(name="goodsService")
 	private GoodsService goodsService;
-	
+
+	/**
+	 * 去新增页面
+	 */
+	@RequestMapping(value="/goAdd")
+	public ModelAndView goAdd(){
+		logBefore(logger, "去新增Goods页面");
+		ModelAndView mv = this.getModelAndView();
+		PageData pd = new PageData();
+		pd = this.getPageData();
+		try {
+			mv.setViewName("goods/goods_edit");
+			mv.addObject("msg", "save");
+			mv.addObject("pd", pd);
+		} catch (Exception e) {
+			logger.error(e.toString(), e);
+		}
+		return mv;
+	}
+
 	/**
 	 * 新增
 	 */
@@ -106,18 +125,20 @@ public class GoodsController extends BaseController {
 	}
 	
 	/**
-	 * 去新增页面
+	 * 类型
 	 */
-	@RequestMapping(value="/goAdd")
-	public ModelAndView goAdd(){
-		logBefore(logger, "去新增Goods页面");
+	@RequestMapping(value="/searchType")
+	public ModelAndView searchType(Page page){
+		logBefore(logger, "搜索");
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
-		pd = this.getPageData();
+			pd = this.getPageData();
+		page.setPd(pd);
 		try {
-			mv.setViewName("goods/goods_edit");
-			mv.addObject("msg", "save");
+			List<PageData> good = goodsService.findByGoodType(page);
+			mv.setViewName("search");
 			mv.addObject("pd", pd);
+			mv.addObject("pds", good);
 		} catch (Exception e) {
 			logger.error(e.toString(), e);
 		}						

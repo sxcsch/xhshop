@@ -18,7 +18,7 @@
 	<plugins>
 		<plugin interceptor="cn.sxkd.plugin.PagePlugin">
 			<!--<property value="oracle" name="dialect"/>-->
-			<property name="dialect" value="mybatis"/>
+			<property name="dialect" value="mysql"/>
 			<property name="pageSqlId" value=".*listPage.*"/>
 		</plugin>
 	</plugins>
