@@ -1,0 +1,150 @@
+.lan{
+    width:100%;
+    overflow: hidden;
+    background:#F5F5F5;
+    box-sizing: border-box;
+}
+.lanCon{
+    width:990px;
+    margin:0 auto;
+    height:100%;
+    padding-top:10px;
+    background:#fff;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+.lanNav{
+    width:990px;
+    height:30px;
+    padding-left:10px;
+    line-height:30px;
+    font-size:14px;
+    color:#333;
+    box-sizing: border-box;
+}
+.lanNav a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.lanNav a:hover{
+    color:#333;
+}
+.lanMain{
+    width:100%;
+    overflow:hidden;
+    padding:20px;
+    box-sizing: border-box;
+}
+.lanTit{
+    width:100%;
+    text-align: center;
+    font-family: "微软雅黑";
+    font-size: 20px;
+    color:#E33B3E;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+}
+.lanSel{
+    width:770px;
+    height:40px;
+    margin:0 auto;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+}
+.selList{
+    width:150px;
+    height:100%;
+    float:left;
+    margin-right:4px;
+    text-align: center;
+    line-height: 40px;
+    background:#F3CAD0;
+    color:#E33B3E;
+    font-size: 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.selListOn{
+    background:#E33B3E;
+    color:#fff;
+}
+.lanWen{
+    width:800px;
+    overflow: hidden;
+    margin:0 auto;
+    margin-bottom: 40px;
+    border:1px solid #E33B3E;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+    display: none;
+}
+.lanTit1{
+    width:100%;
+    height:30px;
+    border-bottom:1px solid #E33B3E;
+    box-sizing: border-box;
+    padding-left:10px;
+    line-height: 30px;
+    color:#E33B3E;
+    font-size: 20px;
+}
+.wenList{
+    width:95%;
+    border-bottom:1px dashed red;
+    padding:10px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin:0 auto;
+}
+.wenImg{
+    width:144px;
+    height:112px;
+    box-sizing: border-box;
+    border:1px solid #ccc;
+    padding:2px;
+    float:left;
+    margin-right: 20px;
+    overflow: hidden;
+}
+.wenImg img{
+    display: block;
+    width:100%;
+}
+.wenRight{
+    width:594px;
+    height:100%;
+    padding-top:5px;
+    box-sizing: border-box;
+    float: left;
+}
+.wenName{
+    width:100%;
+    color:#E43D40;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.floSend,.floLan,.wenInfo{
+    width:100%;
+    color:#333;
+    font-size: 14px;
+    line-height: 25px;
+}
+.hd{
+    width:95%;
+    overflow:hidden;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.hdTit{
+    width:100%;
+    font-size: 20px;
+    color:#E33B3E;
+    margin-bottom: 10px;
+}
+.hdList{
+    width:100%;
+    font-size: 14px;
+    color:#333;
+    margin-bottom: 10px;
+}

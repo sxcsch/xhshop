@@ -224,7 +224,7 @@
             <dt>
                 <a target="_blank" clstag="homepage|keycount|home2013|hbdsh" id="_MYJD_locallife" href="http://life.jd.com/localOrder/iniOrder.do">我的本地生活</a>
             </dt>
-        </dl>
+        </dl>e
         <dl class="fore4">
 
         </dl>
