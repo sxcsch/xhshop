@@ -1,7 +1,10 @@
 package cn.sxkd.controller;
 
 import cn.sxkd.base.BaseController;
+import cn.sxkd.entity.Page;
 import cn.sxkd.entity.TUser;
+import cn.sxkd.service.GoodsService;
+import cn.sxkd.tool.PageData;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -9,7 +12,9 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Created by Administrator on 2018/5/5 0005.
@@ -17,6 +22,9 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping("/page")
 public class PageController extends BaseController {
+
+    @Resource(name="goodsService")
+    private GoodsService goodsService;
 
     @RequestMapping("/index")
     public ModelAndView index(){
@@ -44,10 +52,20 @@ public class PageController extends BaseController {
         return mv;
     }
 
-    @RequestMapping("/item")
-    public ModelAndView item(){
+    @RequestMapping("/searchItem")
+    public ModelAndView item(Page page){
         ModelAndView mv = this.getModelAndView();
-        mv.setViewName("item");
+        PageData pd = new PageData();
+        pd = this.getPageData();
+        page.setPd(pd);
+        try {
+            List<PageData> good = goodsService.findByGoodTypes(page);
+            mv.setViewName("search");
+            mv.addObject("pd", pd);
+            mv.addObject("pds", good);
+        } catch (Exception e) {
+            logger.error(e.toString(), e);
+        }
         return mv;
     }
 
@@ -75,7 +93,7 @@ public class PageController extends BaseController {
     @RequestMapping("/business")
     public ModelAndView business(){
         ModelAndView mv = this.getModelAndView();
-        mv.setViewName("business");
+        mv.setViewName("tg");
         return mv;
     }
 

@@ -129,12 +129,12 @@
             </dl>
             <dl class="fore2">
                 <dt>
-                    <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="">我的预售</a>
+                    <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="">用户管理</a>
                 </dt>
             </dl>
             <dl class="fore3">
                 <dt>
-                    <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/user/showMyUser">我的信息</a>
+                    <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/user/showMyUser">商品管理</a>
                 </dt>
             </dl>
 

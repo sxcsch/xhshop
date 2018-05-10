@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
     <meta name="format-detection" content="telephone=no" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>订单结算页 -淘淘商城</title>
+    <title>订单结算页 -爱上鲜花</title>
 	<!--结算页面样式-->	
 	<link rel="stylesheet" type="text/css" href="/css/base.css" media="all" />
     <link type="text/css" rel="stylesheet" href="/css/order-commons.css" source="widget"/>
@@ -25,20 +25,11 @@
 <!--shortcut end-->
 
 <div class="w w1 header clearfix">
-    <div id="logo"><a href="/"><img src="/images/taotao-logo.gif" alt="淘淘商城"></a></div>
+    <div id="logo"><a href="/"><img src="/images/logo.png" alt=""></a></div>
 </div>
 
 <form id="orderForm" class="hide" action="/order/create.html" method="post">
 		<input type="hidden" name="paymentType" value="1"/>
-		<c:forEach items="${cartList }" var="cart" varStatus="status">
-			<c:set var="totalPrice"  value="${ totalPrice + (cart.price * cart.num)}"/>
-			<input type="hidden" name="orderItems[${status.index}].itemId" value="${cart.id}"/>
-			<input type="hidden" name="orderItems[${status.index}].num" value="${cart.num }"/>
-			<input type="hidden" name="orderItems[${status.index}].price" value="${cart.price}"/>
-			<input type="hidden" name="orderItems[${status.index}].totalFee" value="${cart.price * cart.num}"/>
-			<input type="hidden" name="orderItems[${status.index}].title" value="${cart.title}"/>
-			<input type="hidden" name="orderItems[${status.index}].picPath" value="${cart.images[0]}"/>
-		</c:forEach>
 		<input type="hidden" name="payment" value="<fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" value="${totalPrice/100 }"/>"/>
 		<input type="hidden" name="orderShipping.receiverName" value="入云龙"/>
 		<input type="hidden" name="orderShipping.receiverMobile" value="15891588888"/>
@@ -66,38 +57,28 @@
 </div>
 <div class="step-cont">
 	<div class="consignee-list" id="consignee-list1">
-		<a href="#none" id="prev" class="prev arrow-btns"></a>
-		<a href="#none" id="next" class="next arrow-btns"></a>
 		<div id="consignee1" class="list-cont ui-switchable-body">
             <div id="consignee-ret"></div>
-   			<ul class="ui-switchable-panel-main" id="consignee-list">
-				<!---->
-				<li class="ui-switchable-panel" id="consignee_index_137617472"
-					selected="selected" style="cursor: pointer;">
-					<div class="consignee-item item-selected"
-						consigneeId="137617472" id="consignee_index_div_137617472">
-						<b></b>
-						<div class="user-name">
-							<div class="fl">
-								<strong limit="4">入云龙</strong>&nbsp;&nbsp;收
-							</div>
-							<div class="fr">158****8888</div>
-							<div class="clr"></div>
-						</div>
-						<div class="mt10" limit="15">北京 昌平区 五环外六环里</div>
-						<div class="adr-m" limit="30">西三旗 xxxxxxxxx</div>
-						<div class="op-btns ar">
-							<a href="#none"
-								class="ftx-05 mr10 setdefault-consignee hide"
-								fid="137617472">设为默认地址</a> <a href="#none"
-								class="ftx-05 mr10 edit-consignee" fid="137617472">编辑</a>
-							<a href="#none" class="ftx-05 del-consignee hide"
-								fid="137617472">删除</a>
-						</div>
+			<div class="consignee-item item-selected"
+				consigneeId="137617472" id="consignee_index_div_137617472">
+				<b></b>
+				<div class="user-name">
+					<div class="fl">
+						<strong limit="4">入云龙</strong>&nbsp;&nbsp;收
 					</div>
-				</li>
-				<!---->
-			</ul>
+					<div class="fr">158****8888</div>
+					<div class="clr"></div>
+				</div>
+				<div class="mt10" limit="15">北京 昌平区 五环外六环里</div>
+				<div class="adr-m" limit="30">西三旗 xxxxxxxxx</div>
+				<div class="op-btns ar">
+					<a href="#none"
+						class="ftx-05 mr10 setdefault-consignee hide"
+						fid="137617472">设为默认地址</a>
+					<a href="#none" class="ftx-05 del-consignee hide"
+						fid="137617472">删除</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

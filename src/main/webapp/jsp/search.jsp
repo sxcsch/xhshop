@@ -56,7 +56,7 @@
 	</div>
 	<div class="p-price">
 		<i>鲜花价：</i>
-		<strong>￥<fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" value="${item.price}"/></strong>
+		<strong>￥<input type="text" name="price" value="${item.price}"/></strong>
 	</div>
 	<div class="service">由爱上鲜花发货</div>
 	<div class="extra">
@@ -71,10 +71,5 @@
 <!-- footer end -->
 <script type="text/javascript" src="/js/jquery.hashchange.js"></script>
 <script type="text/javascript" src="/js/search_main.js"></script>
-<script type="text/javascript">
-//${paginator.totalPages}
-SEARCH.query = "${query}";
-SEARCH.bottom_page_html(${page},${totalPages},'');
-</script>
 </body>
 </html>

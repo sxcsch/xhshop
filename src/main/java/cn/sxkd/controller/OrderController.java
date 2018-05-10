@@ -3,11 +3,7 @@ package cn.sxkd.controller;
 import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.annotation.Resource;
 
@@ -18,6 +14,7 @@ import cn.sxkd.entity.TUser;
 import cn.sxkd.service.GoodsService;
 import cn.sxkd.service.OrderService;
 import cn.sxkd.tool.AppUtil;
+import cn.sxkd.tool.DateUtil;
 import cn.sxkd.tool.PageData;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -44,23 +41,52 @@ public class OrderController extends BaseController {
 	@RequestMapping("/showCart")
 	public ModelAndView showCart(){
 		ModelAndView mv = this.getModelAndView();
+		PageData pd = this.getPageData();
 		try {
-			mv.setViewName("cart");
 			TUser tUser = getSessionUserName();
 			if (tUser!=null){
-                PageData pageData = new PageData();
-                pageData.put("user_id",tUser.getUsersid());
-                List<PageData> list = orderService.findOrderByUserId(pageData);
-                if (list!=null&&list.size()>0){
+
+			}else{
+				mv.setViewName("login");
+				return mv;
+			}
+			mv.setViewName("cart");
+			if (pd.get("goods_id")!=null){
+				PageData id = new PageData();
+				id.put("id",pd.get("goods_id"));
+				PageData goods = goodsService.findById(id);
+				pd.put("num",89999999*Math.random()+10000000);
+				pd.put("user_id",tUser.getUsersid());
+				pd.put("type_id",goods.get("type"));
+				pd.put("take_info","");
+				pd.put("status","1");
+				pd.put("price",goods.get("price"));
+				orderService.save(pd);
+				List<PageData> list = orderService.findOrderByUserId(pd);
+				if (list!=null&&list.size()>0){
 					for (PageData p:list){
+						PageData pageData = new PageData();
 						pageData.put("id",p.get("goods_id"));
 						PageData good = goodsService.findById(pageData);
 						p.put("good",good);
 					}
 				}
-
-                mv.addObject("list",list);
-            }
+				mv.addObject("list",list);
+			}else {
+				if (tUser!=null){
+					PageData pageData = new PageData();
+					pageData.put("user_id",tUser.getUsersid());
+					List<PageData> list = orderService.findOrderByUserId(pageData);
+					if (list!=null&&list.size()>0){
+						for (PageData p:list){
+							pageData.put("id",p.get("goods_id"));
+							PageData good = goodsService.findById(pageData);
+							p.put("good",good);
+						}
+					}
+					mv.addObject("list",list);
+				}
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -93,22 +119,40 @@ public class OrderController extends BaseController {
 		return mv;
 	}
 
-	
-	/**
-	 * 新增
-	 */
-	@RequestMapping(value="/save")
-	public ModelAndView save() throws Exception{
-		logBefore(logger, "新增Order");
+	/*
+    保存
+     */
+	@RequestMapping("/add")
+	@ResponseBody
+	public Object register(){
+		PageData pd = this.getPageData();
+		Map<String,Object> map = new HashMap<String,Object>();
+		try{
+			long   id = new   Date().getTime();
+			orderService.save(pd);
+			map.put("status","200");
+			map.put("msg","登录成功");
+		}catch (Exception e){
+			logger.error(e);
+		}
+		return map;
+	}
+
+	@RequestMapping("/showOrderCart")
+	public ModelAndView showOrderCart(){
 		ModelAndView mv = this.getModelAndView();
-		PageData pd = new PageData();
-		pd = this.getPageData();
-		orderService.save(pd);
-		mv.addObject("msg","success");
-		mv.setViewName("save_result");
+		PageData pd = this.getPageData();
+		try {
+			mv.setViewName("order-cart");
+			mv.addObject("pd",pd);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return mv;
 	}
+
 	
+
 	/**
 	 * 删除
 	 */
@@ -183,55 +227,6 @@ public class OrderController extends BaseController {
 		return mv;
 	}	
 	
-	/**
-	 * 去修改页面
-	 */
-	@RequestMapping(value="/goEdit")
-	public ModelAndView goEdit(){
-		logBefore(logger, "去修改Order页面");
-		ModelAndView mv = this.getModelAndView();
-		PageData pd = new PageData();
-		pd = this.getPageData();
-		try {
-			pd = orderService.findById(pd);	//根据ID读取
-			mv.setViewName("orderController/order/order_edit");
-			mv.addObject("msg", "edit");
-			mv.addObject("pd", pd);
-		} catch (Exception e) {
-			logger.error(e.toString(), e);
-		}						
-		return mv;
-	}	
-	
-	/**
-	 * 批量删除
-	 */
-	@RequestMapping(value="/deleteAll")
-	@ResponseBody
-	public Object deleteAll() {
-		logBefore(logger, "批量删除Order");
-		PageData pd = new PageData();
-		Map<String,Object> map = new HashMap<String,Object>();
-		try {
-			pd = this.getPageData();
-			List<PageData> pdList = new ArrayList<PageData>();
-			String DATA_IDS = pd.getString("DATA_IDS");
-			if(null != DATA_IDS && !"".equals(DATA_IDS)){
-				String ArrayDATA_IDS[] = DATA_IDS.split(",");
-				orderService.deleteAll(ArrayDATA_IDS);
-				pd.put("msg", "ok");
-			}else{
-				pd.put("msg", "no");
-			}
-			pdList.add(pd);
-			map.put("list", pdList);
-		} catch (Exception e) {
-			logger.error(e.toString(), e);
-		} finally {
-			logAfter(logger);
-		}
-		return AppUtil.returnObject(pd, map);
-	}
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder){

@@ -78,7 +78,22 @@
 		where
 			type = #{pd.type}
 	</select>
-	
+
+	<select id="findByGoodTypeslistPage" parameterType="page" resultType="pd">
+		select
+			id,
+			name,
+			des,
+			price,
+			type,
+			picture,
+			status
+		from
+			t_goods
+		where
+			type IN (1,5,3)
+	</select>
+
 	
 	<!-- 列表 -->
 	<select id="datalistPage" parameterType="page" resultType="pd">

@@ -10,29 +10,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="/css/taotao.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="/css/pshow.css" media="all" />
-	<script type="text/javascript">
-    	window.pageConfig = {
-			compatible: true,
-       		product: {
-				skuid: 1221882,
-				name: '\u957f\u8679\uff08\u0043\u0048\u0041\u004e\u0047\u0048\u004f\u004e\u0047\uff09\u004c\u0045\u0044\u0034\u0032\u0035\u0033\u0038\u0045\u0053\u0020\u0034\u0032\u82f1\u5bf8\u0020\u7a84\u8fb9\u84dd\u5149\u004c\u0045\u0044\u6db2\u6676\u7535\u89c6\uff08\u9ed1\u8272\uff09',
-				skuidkey:'E804B1D153D29E36088A33A134D85EEA',
-				href: 'http://item.jd.com/1221882.html',
-				src: 'jfs/t304/157/750353441/93159/e4ee9876/54227256N20d4f5ec.jpg',
-				cat: [737,794,798],
-				brand: 20710,
-				nBrand: 20710,
-				tips: false,
-				type: 1,
-				venderId:0,
-				shopId:'0',
-				TJ:'0',
-				specialAttrs:["HYKHSP-0","isHaveYB","isSelfService-0","isWeChatStock-0","isCanUseJQ","isOverseaPurchase-0","YuShou","is7ToReturn-1","isCanVAT"],
-				videoPath:'',
-				HM:'0'
-			}
-		};
-	</script>
 	<style>
 		#sidepanel{
 			display: none!important;
@@ -40,13 +17,12 @@
 	</style>
 </head>
 <body version="140120">
-<script type="text/javascript">try{(function(flag){ if(!flag){return;} if(window.location.hash == '#m'){var exp = new Date();exp.setTime(exp.getTime() + 30 * 24 * 60 * 60 * 1000);document.cookie = "pcm=1;expires=" + exp.toGMTString() + ";path=/;domain=jd.com";return;}else{var cook=document.cookie.match(new RegExp("(^| )pcm=([^;]*)(;|$)"));var flag=false;if(cook&&cook.length>2&&unescape(cook[2])=="1"){flag=true;}} var userAgent = navigator.userAgent; if(userAgent){ userAgent = userAgent.toUpperCase();if(userAgent.indexOf("PAD")>-1){return;} var mobilePhoneList = ["IOS","IPHONE","ANDROID","WINDOWS PHONE"];for(var i=0,len=mobilePhoneList.length;i<len;i++){ if(userAgent.indexOf(mobilePhoneList[i])>-1){var url="http://m.jd.com/product/"+pageConfig.product.skuid+".html";if(flag){pageConfig.product.showtouchurl=true;}else{window.location.href = url;}break;}}}})((function(){var json={"6881":3,"1195":3,"10011":3,"6980":3,"12360":3};if(json[pageConfig.product.cat[0]+""]==1||json[pageConfig.product.cat[1]+""]==2||json[pageConfig.product.cat[2]+""]==3){return false;}else{return true;}})());}catch(e){}</script>
 <!-- header start -->
 <jsp:include page="commons/header.jsp" />
 <!-- header end -->
 <div class="w">
 	<div class="breadcrumb">
-		<strong>爱上鲜花 ><a href="#">${pds.type.sortName }</a></strong>
+		<strong>爱上鲜花 &gt;<a href="#">${pds.type.sortName }</a></strong>
 	</div>
 </div><!--breadcrumb end-->
 <div class="w">
@@ -57,7 +33,6 @@
 		</div><!--name end-->
 		<script type='text/javascript'>var warestatus = 1; var eleSkuIdKey =[];</script>
 		<div class="clearfix" clstag="shangpin|keycount|product|share">
-<script type="text/javascript">pageConfig.product.marketPrice='';</script>
 <ul id="summary">
 	<li id="summary-price">
 		<div class="dt">鲜花价：</div>
@@ -113,7 +88,7 @@
 		        <li id="choose-result"><div class="dt"></div><div class="dd"></div></li>
 				<li id="choose-btns">
 					<div id="choose-btn-append"  class="btn">
-							<a class="btn-append " id="InitCartUrl" href="/order/add?id=${pds.id}" clstag="shangpin|keycount|product|initcarturl">加入购物车<b></b></a>
+							<a class="btn-append " id="InitCartUrl" onclick="addOrder(${pds.id})" clstag="shangpin|keycount|product|initcarturl">加入购物车<b></b></a>
 					</div>
 					<div id="choose-btn-easybuy" class="btn"></div>
 					<div id="choose-btn-divide" class="btn"></div>
@@ -158,9 +133,9 @@
 			</div>
 			<div class="mc" data-widget="tab-content" id="product-detail-1">
 				<ul class="detail-list">
-					<li title="长虹LED42538ES">商品名称：${pds.name}</li>
+					<li title="${pds.name}">商品名称：${pds.name}</li>
 					<li>商品编号：${pds.id}</li>
-					<li>科：<a href="http://www.jd.com/pinpai/798-20710.html" target="_blank">蔷薇科</a></li>
+					<li>科：<a href="#" target="_blank">蔷薇科</a></li>
 					<li>上架时间：2014-09-24 15:45:26</li>
 					<li>纲：双子叶植物纲</li>
 					<li>界：蓝藻界</li>
@@ -181,14 +156,14 @@
 			<div class="mc hide" data-widget="tab-content" id="product-detail-2">
 				${pds.des }
 			</div>
-				<div class="mc  hide" data-widget="tab-content" id="product-detail-3"><div class="item-detail">包装纸×1、营养液×1、礼盒×1</div></div><div class="mc  hide" data-widget="tab-content" id="product-detail-4"></div><div class="mc hide " data-widget="tab-content" id="product-detail-5"><div class="item-detail">本产品全国联保，享受三包服务，质保期为：一年质保<br />本产品提供上门安装调试、提供上门检测和维修等售后服务，自收到商品之日起，如您所购买家电商品出现质量问题，请先联系厂家进行检测 ，凭厂商提供的故障检测证明，在“我的淘淘-客户服务-返修退换货”页面提交退换申请，将有专业售后人员提供服务。淘淘承诺您：30天内可为您退货或换货，180天内无需修理直接换货，超过180天按国家三包规定享受服务。<br />您可以查询本品牌在各地售后服务中心的联系方式，<a  class="link_1" href="http://www.changhong.com">请点击这儿查询......</a><br />
-						<br/>售后服务电话：400-811-1666<br/>品牌官方网站：<a href="#" target="_blank">http://www.xianhua.com</a>
+				<div class="mc  hide" data-widget="tab-content" id="product-detail-3"><div class="item-detail">包装纸×1、营养液×1、礼盒×1</div></div><div class="mc  hide" data-widget="tab-content" id="product-detail-4"></div><div class="mc hide " data-widget="tab-content" id="product-detail-5"><div class="item-detail">本产品全国联保，享受三包服务，质保期为：一年质保<br />本产品提供上门安装调试、提供上门检测和维修等售后服务，自收到商品之日起，如您所购买家电商品出现质量问题，请先联系厂家进行检测 ，凭厂商提供的故障检测证明，在“我的淘淘-客户服务-返修退换货”页面提交退换申请，将有专业售后人员提供服务。淘淘承诺您：30天内可为您退货或换货，180天内无需修理直接换货，超过180天按国家三包规定享受服务。<br />您可以查询本品牌在各地售后服务中心的联系方式，<br />
+						<br/>售后服务电话：400-811-1666<br/>
 
 						</div></div><div id="product-detail-6" class="mc hide" data-widget="tab-content"></div>
 			<!--知识库二级标签、标题-->
             <div id="promises">
 	<strong>服务承诺：</strong><br />
-	爱上鲜花向您保证所售商品均为正品行货，爱上鲜花自营商品开具机打发票或电子发票。凭质保证书及爱上鲜花发票，可享受全国联保服务，与您亲临商场选购的商品享受相同的质量保证。爱上鲜花还为您提供具有竞争力的商品价格和<a href="http://www.jd.com/help/kdexpress.aspx" target="_blank">运费政策</a>，请您放心购买！
+	爱上鲜花向您保证所售商品均为正品行货，爱上鲜花自营商品开具机打发票或电子发票。凭质保证书及爱上鲜花发票，可享受全国联保服务，与您亲临商场选购的商品享受相同的质量保证。爱上鲜花还为您提供具有竞争力的商品价格，请您放心购买！
 	<br /><br />
 	注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！ 
 </div>
@@ -200,59 +175,20 @@
 	</div><!--right end-->
 	
 	<div class="left">
-		<div id="miaozhen7886" class="m"><a href="#" target="_blank"><img data-img="2" width="211" height="261" src="images/10.jpg" class="loading-style2"></a></div>
-		<div id="miaozhen7886" class="m"><a href="#" target="_blank"><img data-img="2" width="211" height="261" src="images/12.jpg" class="loading-style2"></a></div>
+		<div id="miaozhen7886" class="m"><img data-img="2" width="211" height="261" src="images/10.jpg" class="loading-style2"></div>
+		<div id="miaozhen7887" class="m"><img data-img="2" width="211" height="261" src="images/12.jpg" class="loading-style2"></div>
 	</div><!--left end-->
 	<%--<span class="clr"></span>--%>
 </div>
+	<script type="text/javascript">
+        function addOrder(id) {
+            var num = $('#buy-num').val();
+            window.location.href = "order/showCart?goods_id="+id+"&amount="+num;
+        }
+	</script>
 <!-- footer start -->
 <jsp:include page="commons/footer.jsp" />
 <!-- footer end -->
 <script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
-<script type="text/javascript" src="/js/lib-v1.js"></script>
-<script type="text/javascript" src="/js/product.js"></script>
-<script type="text/javascript" src="/js/iplocation_server.js"></script>
-<script type="text/javascript">
-	var itemControl = {
-			param:{
-				descUrl:"/item/desc/",
-				paramUrl:"/item/param/"
-			},
-			//请求商品描述
-			getItemDesc:function(itemId) {
-				$.get(itemControl.param.descUrl+itemId+".html", function(data){
-					//返回商品描述的html，直接显示到页面
-					$("#item-desc").append(data);
-				});
-			},
-			//参数请求flag
-			haveParam:false,
-			//请求规格参数
-			getItemParam:function(itemId) {
-				//如果没有查询过规格参数，就做请求
-				if (!itemControl.haveParam) {
-					$.get(itemControl.param.paramUrl+itemId+".html", function(data){
-						//返回商品规格的html，直接显示到页面
-						$("#product-detail-2").append(data);
-						//更改flag状态
-						itemControl.haveParam = true;
-					});
-				}
-			}
-	};
-	$(function(){
-		//取商品id
-		var itemId = "${pds.id}";
-		//给商品规格参数tab页绑定事件
-		$("#p-con-attr").bind("click", function(){
-			
-			itemControl.getItemParam(itemId);
-		});
-		//延迟一秒加载商品描述信息
-		setTimeout(function(){
-			itemControl.getItemDesc(itemId);
-		},1000);
-	});
-</script>
 </body>
 </html>

@@ -7,18 +7,6 @@ function StringBuilder() {
 function jdThickBoxclose() {
     $(".thickclose").trigger("click")
 }
-function getparam() {
-    for (var a = "", b = "", c = (new Object, location.search.substring(1)), d = c.split("&"), e = 0; e < d.length; e++) {
-        var f = d[e].indexOf("=");
-        if (-1 != f) {
-            {
-                d[e].substring(0, f)
-            }
-            "sid" == d[e].substring(0, f) && (a = unescape(d[e].substring(f + 1))), "t" == d[e].substring(0, f) && (b = unescape(d[e].substring(f + 1)))
-        }
-    }
-    return "" != a || "" != b ? "&sid=" + escape(a) + "&t=" + escape(b) : ""
-}
 function mlazyload(a) {
     var b = {defObj: null,defHeight: 0,fn: null};
     b = $.extend(b, a || {});
@@ -33,23 +21,6 @@ function mlazyload(a) {
         e(), $(window).bind("scroll", function() {
             e()
         })
-    }
-}
-function getHashProbability(a, b) {
-    function c(a) {
-        for (var b = 0, c = 0; c < a.length; c++)
-            b = (b << 5) - b + a.charCodeAt(c), b &= b;
-        return b
-    }
-    return Math.abs(c(a)) % b
-}
-function clothingAbTest() {
-    if ("home" == pageConfig.navId) {
-        var a = CookieUtil.getCookie("__jda");
-        if (a) {
-            var b = getHashProbability(a, 1e4), c = $("#_JD_ALLSORT div.fore6"), d = c.find(".subitem .fore1 dt a"), e = c.find(".subitem .fore2 dt a");
-            5e3 >= b ? (c.find("h3").html('<a href="http://channel.jd.com/1315-1342.html" clstag="homepage|keycount|home2013|0606a4">\u7537\u88c5</a>\u3001<a href="http://channel.jd.com/1315-1343.html" clstag="homepage|keycount|home2013|0606a3">\u5973\u88c5</a>\u3001<a href="http://channel.jd.com/1315-1345.html" clstag="homepage|keycount|home2013|0606a5">\u5185\u8863</a>\u3001<a href="http://channel.jd.com/jewellery.html" clstag="homepage|keycount|home2013|0606a6">\u73e0\u5b9d</a>'), d.attr("clstag", "homepage|keycount|home2013|0606b3"), e.attr("clstag", "homepage|keycount|home2013|0606b4")) : (c.find("h3").html('<a href="http://channel.jd.com/clothing.html" clstag="homepage|keycount|home2013|0606a1">\u670d\u9970\u5185\u8863</a>\u3001<a href="http://channel.jd.com/jewellery.html" clstag="homepage|keycount|home2013|0606a2">\u73e0\u5b9d\u9996\u9970</a>'), d.attr("clstag", "homepage|keycount|home2013|0606b1"), e.attr("clstag", "homepage|keycount|home2013|0606b2"))
-        }
     }
 }
 !function() {

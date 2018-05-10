@@ -1,6 +1,21 @@
  /*
  Date: 2018-05-06
  */
+ function addOrder(id) {
+        var num = $('#buy-num').val();
+        window.location.href = "order/showOrderCart?goods_id="+id+"&amount="+num;
+         // $.ajax({
+         //     type: "POST",
+         //     url: "/order/add.do",
+         //     data: {'id':id,'amount':num},
+         //     dataType : "json",
+         //     success: function(respMsg){
+         //         location.href = "order/showCart";
+         //     }
+         // });
+ }
+
+
  function updateUserInfo() {
 
      var queryArray = $("#user_form").serializeArray();

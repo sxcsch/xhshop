@@ -94,7 +94,7 @@
                 <p><span class="totalSkuPrice">¥<fmt:formatNumber value="${totalPrice}" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></span>总计：</p>
                 <p><span id="totalRePrice">- ¥0.00</span>优惠：</p>
             </div>
-            <div class="amout fr"><span id="selectedCount">1</span> 件商品</div>
+            <div class="amout fr"><span id="selectedCount"></span> 件商品</div>
         </div>
         <div class="ui-ceilinglamp-1" style="width: 988px; height: 49px;"><div class="cart-dibu ui-ceilinglamp-current" style="width: 988px; height: 49px;">
           <div class="control fdibu fdibucurrent">
@@ -114,22 +114,13 @@
               <span class="shopping">
                   <b>
                   </b>
-                  <a href="/" target="_blank" clstag="clickcart|keycount|xincart|coudanlink" id="continue">继续购物</a>
+                  <a href="#" target="_blank" clstag="clickcart|keycount|xincart|coudanlink" id="continue">继续购物</a>
               </span>
           </div>
           <div class="cart-total-2014">
               <div class="cart-button">
                   <span class="check-comm-btns" id="checkout-jd">
                       <a class="checkout" href="/order/order-cart.html" clstag="clickcart|keycount|xincart|gotoOrderInfo" id="toSettlement">去结算<b></b></a>
-                  </span>
-                  <span class="combine-btns" style="display:none">
-                        <span class="fore1" style="display: none;">
-                          <a href="" class="combine-btn">不支持合并付款</a>
-                      </span>
-                      <span class="fore2 hide" style="display: inline;">
-                          <a href="javascript:goToOverseaOrder();" class="checkout-jdInt">去淘淘国际结算<b></b></a>
-                          <a href="javascript:goToOrder();" class="checkout-jd">去淘淘结算<b></b></a>
-                      </span>
                   </span>
               </div>
               <div class="total fr">
