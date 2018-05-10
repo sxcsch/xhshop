@@ -97,9 +97,7 @@
 				<ul id="navitems-2013">
 					<li class="fore1" id="nav-home" clstag="homepage|keycount|home2013|07a"><a href="/">首页</a></li>
 					<li class="fore5" id="nav-auction" clstag="homepage|keycount|home2013|07e"><a href="/page/item">鲜花</a></li>
-					<li class="fore2" id="nav-fashion" clstag="homepage|keycount|home2013|07b"><a href="/page/all">花语大全</a></li>
-					<li class="fore4" id="nav-tuan" clstag="homepage|keycount|home2013|07d"><a href="/page/item" target="_blank">设计师臻选</a></li>
-					<li class="fore3" id="nav-chaoshi" clstag="homepage|keycount|home2013|07c"><a href="/page/business">企业团购</a></li>
+					<li class="fore2" id="nav-fashion" clstag="homepage|keycount|home2013|07b"><a href="/page/flowerLanguage">花语大全</a></li>
 				</ul>
 		</div>
 	</div>

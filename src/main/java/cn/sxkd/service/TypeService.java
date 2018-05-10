@@ -23,7 +23,7 @@ public class TypeService {
     public void saveRegister(PageData pd)throws Exception{
         TType tType = new TType();
         tType.setSortname(pd.getString("sortname"));
-        daoSupport.save("TUserMapper.insertSelective",tType);
+        daoSupport.save("TTypeMapper.insertSelective",tType);
     }
 
     /*
@@ -32,7 +32,7 @@ public class TypeService {
     public PageData findTypeById(PageData pd)throws Exception {
         TType tType = new TType();
         tType.setSortid(Integer.parseInt(pd.getString("sortid")));
-        return (PageData)daoSupport.findForObject("TUserMapper.selectByPrimaryKey", tType);
+        return (PageData)daoSupport.findForObject("TTypeMapper.selectByPrimaryKey", tType);
     }
 
     /*
@@ -40,7 +40,7 @@ public class TypeService {
 	*/
     public List<PageData> findUserByList(PageData pd)throws Exception {
         TType tType = new TType();
-        return (List<PageData>)daoSupport.findForList("TUserMapper.selectList", tType);
+        return (List<PageData>)daoSupport.findForList("TTypeMapper.selectList", tType);
     }
 
     /*
@@ -49,7 +49,7 @@ public class TypeService {
     public void updateTypeById(PageData pd)throws Exception {
         TType tType = new TType();
         tType.setSortid(Integer.parseInt(pd.getString("sortid")));
-        daoSupport.update("TUserMapper.updateByPrimaryKeySelective", tType);
+        daoSupport.update("TTypeMapper.updateByPrimaryKeySelective", tType);
     }
 
 }
