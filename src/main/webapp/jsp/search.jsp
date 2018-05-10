@@ -45,12 +45,12 @@
 <c:forEach items="${pds}" var="item">
 <li class="item-book" bookid="11078102">
 	<div class="p-img">
-		<a target="_blank" href="/item/${item.id }.html">
+		<a target="_blank" href="/goods/searchId?id=${item.id }">
 			<img src="data:image/png;base64,${item.picture}" width="160" height="160" data-img="1" data-lazyload="" />
 		</a>
 	</div>
 	<div class="p-name">
-		<a target="_blank" href="/item/${item.id }.html">
+		<a target="_blank" href="/goods/searchId?id=${item.id }">
 			${item.name}
 		</a>
 	</div>
@@ -60,7 +60,7 @@
 	</div>
 	<div class="service">由爱上鲜花发货</div>
 	<div class="extra">
-		<span class="star"><span class="star-white"><span class="star-yellow h5">&nbsp;</span></span></span>
+		<span class="star"><span class="star-white"><span class="star-yellow h5"></span></span></span>
 	</div>
 </li>
 </c:forEach>

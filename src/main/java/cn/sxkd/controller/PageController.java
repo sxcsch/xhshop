@@ -51,6 +51,13 @@ public class PageController extends BaseController {
         return mv;
     }
 
+    @RequestMapping("/flowerLanguage")
+    public ModelAndView flowerlanguage(){
+        ModelAndView mv = this.getModelAndView();
+        mv.setViewName("flower_language");
+        return mv;
+    }
+
     @RequestMapping("/all")
     public ModelAndView all(){
         ModelAndView mv = this.getModelAndView();

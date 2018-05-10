@@ -15,8 +15,10 @@ import javax.annotation.Resource;
 import cn.sxkd.base.BaseController;
 import cn.sxkd.entity.Page;
 import cn.sxkd.service.GoodsService;
+import cn.sxkd.service.TypeService;
 import cn.sxkd.tool.AppUtil;
 import cn.sxkd.tool.PageData;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
@@ -34,6 +36,9 @@ public class GoodsController extends BaseController {
 	
 	@Resource(name="goodsService")
 	private GoodsService goodsService;
+
+	@Autowired
+	private TypeService typeService;
 
 	/**
 	 * 去新增页面
@@ -143,7 +148,31 @@ public class GoodsController extends BaseController {
 			logger.error(e.toString(), e);
 		}						
 		return mv;
-	}	
+	}
+
+	/**
+	 * ID
+	 */
+	@RequestMapping(value="/searchId")
+	public ModelAndView searchType(){
+		logBefore(logger, "搜索");
+		ModelAndView mv = this.getModelAndView();
+		PageData pd = new PageData();
+		pd = this.getPageData();
+		try {
+			PageData good = goodsService.findById(pd);
+			PageData p = new PageData();
+			p.put("sortid",good.get("type").toString());
+			PageData type = typeService.findTypeById(p);
+			good.put("type",type);
+			mv.setViewName("item");
+			mv.addObject("pd", pd);
+			mv.addObject("pds", good);
+		} catch (Exception e) {
+			logger.error(e.toString(), e);
+		}
+		return mv;
+	}
 	
 	/**
 	 * 去修改页面
