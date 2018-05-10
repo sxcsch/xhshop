@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 
 public class DateUtil {
 	private final static SimpleDateFormat sdfYear = new SimpleDateFormat("yyyy");
@@ -18,6 +19,17 @@ public class DateUtil {
 	private final static SimpleDateFormat sdfTime = new SimpleDateFormat(
 			"yyyy-MM-dd HH:mm:ss");
 
+
+	public static String getOrderIdByTime() {
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmss");
+		String newDate=sdf.format(new Date());
+		String result="";
+		Random random=new Random();
+		for(int i=0;i<3;i++){
+			result+=random.nextInt(10);
+		}
+		return newDate+result;
+	}
 	/**
 	 * 获取YYYY格式
 	 * 
