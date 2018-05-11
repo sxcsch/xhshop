@@ -1,0 +1,90 @@
+.modMain{
+    width:100%;
+    background: #fff;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.userNav{
+    width:100%;
+    height:30px;
+    margin-bottom: 20px;
+    line-height: 30px;
+ }
+.userNav span{
+    float:left;
+    margin-right: 5px;
+    font-size: 14px;
+    color:#333;
+}
+.userNav a{
+    display: block;
+    float: left;
+    text-decoration: none;
+    font-size: 14px;
+    color:#333;
+}
+.userNav a:hover{
+    color:#333
+}
+table,table tr,table tr td{
+    border:1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+table th{
+    width:100px;
+    height:30px;
+    font-size: 14px;
+    color:#637E8F;
+    text-align: center;
+    line-height:30px;
+    background:#EFF4F8;
+    box-sizing: border-box;
+}
+table td{
+    width:100px;
+    height:30px;
+    font-size: 14px;
+    color:#637E8F;
+    text-align: center;
+    line-height:30px;
+    box-sizing: border-box;
+}
+table td a{
+    display: block;
+    width:100%;
+    height:100%;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    color:#2A8CFA;
+}
+table td a:hover{
+    text-decoration: none;
+}
+.spMs{
+    padding: 5px;
+    line-height: 20px;
+}
+.spImg{
+    padding: 10px;
+}
+.spImg img{
+    display: block;
+    width:100%;
+    height:74px;
+}
+.spAdd,.spModify,.spDel{
+    display: block;
+    width:100%;
+    height:20px;
+    text-align: center;
+    margin-bottom: 5px;
+    line-height: 20px;
+    color:#2A8CFA;
+}
+.spDel{
+    margin-bottom: 0;
+}

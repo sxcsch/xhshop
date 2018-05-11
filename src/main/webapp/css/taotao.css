@@ -2355,18 +2355,20 @@ img.err-price {
 #categorys-2013 span {
 	display: block;
 	width: 203px;
+	height:56px;
 	position: absolute;
 	z-index: 1
 }
 
 #categorys-2013 h3 {
 	width: 186px;
-	height: 26px;
+	height: 56px;
 	line-height: 56px;
 	padding-left: 43px;
 	border-width: 1px 0;
 	background-image: none;
-	font-weight: 600
+	font-weight: 600;
+	box-sizing: border-box;
 }
 
 #categorys-2013 h3 a:link,#categorys-2013 h3 a:visited {
@@ -2381,7 +2383,7 @@ img.err-price {
 #categorys-2013 s {
 	display: block;
 	position: absolute;
-	top: 10px;
+	top:40%;
 	left: 189px;
 	width: 6px;
 	height: 9px;
@@ -2772,6 +2774,9 @@ img.err-price {
 #footer-2013 {
 	padding-bottom: 30px;
 	text-align: center
+}
+#footer-2013 span{
+	padding: 0 5px;
 }
 
 #footer-2013 .links a,#footer-2013 .links span {
