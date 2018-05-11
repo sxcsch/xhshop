@@ -46,32 +46,21 @@
                                     <th>图片</th>
                                     <th>操作</th>
                                 </tr>
-                                <tr>
-                                    <td>01</td>
-                                    <td>白玫瑰</td>
-                                    <td class="spMs">白玫瑰，被子植物门，玫瑰中的一种</td>
-                                    <td>¥10</td>
-                                    <td>玫瑰</td>
-                                    <td class="spImg"><img src="images/flower/1.jpg" alt=""></td>
-                                    <td>
-                                        <a href="" class="spAdd">添加</a>
-                                        <a href="" class="spModify">修改</a>
-                                        <a href="" class="spDel">删除</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>02</td>
-                                    <td>黄郁金香</td>
-                                    <td class="spMs">百合科郁金香属的多年生草本植物</td>
-                                    <td>¥8</td>
-                                    <td>郁金香</td>
-                                    <td class="spImg"><img src="images/flower/4.jpg" alt=""></td>
-                                    <td>
-                                        <a href="" class="spAdd">添加</a>
-                                        <a href="" class="spModify">修改</a>
-                                        <a href="" class="spDel">删除</a>
-                                    </td>
-                                </tr>
+                                <c:forEach items="${goodsList}" var="goods">
+                                    <tr>
+                                        <td>${goods.id}</td>
+                                        <td>${goods.name}</td>
+                                        <td class="spMs">${goods.des}</td>
+                                        <td>${goods.price}</td>
+                                        <td>${goods.types.sortName}</td>
+                                        <td class="spImg"><img src="data:image/png;base64,${goods.picture}" alt=""></td>
+                                        <td>
+                                            <a href="" class="spAdd">添加</a>
+                                            <a href="" class="spModify">修改</a>
+                                            <a href="" class="spDel">删除</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>
@@ -88,12 +77,12 @@
                     </dl>
                     <dl class="fore2">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="">用户管理</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/page/user">用户管理</a>
                         </dt>
                     </dl>
                     <dl class="fore3">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/user/showMyUser" class="curr">商品管理</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/page/goods" class="curr">商品管理</a>
                         </dt>
                     </dl>
 

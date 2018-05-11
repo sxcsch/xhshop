@@ -38,8 +38,8 @@
                 </div>
                 <script type="text/javascript">
                     setTimeout(function () {
-                        if (!$("#loginname").val()) {
-                            $("#loginname").get(0).focus();
+                        if (!$("#sortname").val()) {
+                            $("#sortname").get(0).focus();
                         }
                     }, 0);
                 </script>
@@ -47,7 +47,7 @@
                 <div class="item fore2">
                     <span>密码</span>
                     <div class="item-ifo">
-                        <input type="userpass" id="nloginpwd" name="userpass" class="text" tabindex="2" autocomplete="off"/>
+                        <input type="password" id="userpass" name="userpass" class="text" tabindex="2" autocomplete="off"/>
                         <div class="i-pass ico"></div>
                         <label id="loginpwd_succeed" class="blank invisible"></label>
                         <label id="loginpwd_error" class="hide"></label>

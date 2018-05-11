@@ -4,7 +4,10 @@ import cn.sxkd.base.BaseController;
 import cn.sxkd.entity.Page;
 import cn.sxkd.entity.TUser;
 import cn.sxkd.service.GoodsService;
+import cn.sxkd.service.TypeService;
+import cn.sxkd.service.UserService;
 import cn.sxkd.tool.PageData;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -25,6 +28,10 @@ public class PageController extends BaseController {
 
     @Resource(name="goodsService")
     private GoodsService goodsService;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private TypeService typeService;
 
     @RequestMapping("/index")
     public ModelAndView index(){
@@ -40,6 +47,42 @@ public class PageController extends BaseController {
         ModelAndView mv = this.getModelAndView();
 
         mv.setViewName("error");
+        return mv;
+    }
+
+    @RequestMapping("/user")
+    public ModelAndView user(){
+        ModelAndView mv = this.getModelAndView();
+        mv.setViewName("userManage");
+        PageData pd = new PageData();
+        try {
+            List<PageData> list = userService.findUserByList(pd);
+            mv.addObject("userList",list);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mv;
+    }
+
+    @RequestMapping("/goods")
+    public ModelAndView goods(){
+        ModelAndView mv = this.getModelAndView();
+        mv.setViewName("goodsManage");
+        PageData pd = new PageData();
+        try {
+            List<PageData> list = goodsService.listAll(pd);
+            if (list!=null&&list.size()>0){
+                for (PageData p:list){
+                    PageData pageData = new PageData();
+                    pageData.put("sortid",p.get("type"));
+                    PageData types = typeService.findTypeById(pageData);
+                    p.put("types",types);
+                }
+            }
+            mv.addObject("goodsList",list);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return mv;
     }
 
@@ -98,9 +141,28 @@ public class PageController extends BaseController {
     }
 
     @RequestMapping("/search")
-    public ModelAndView search(){
+    public ModelAndView search(Page page){
         ModelAndView mv = this.getModelAndView();
-        mv.setViewName("search");
+        PageData pd = new PageData();
+        pd = this.getPageData();
+        page.setPd(pd);
+        try {
+            if (pd.get("name")!=null){
+                String keyword = new String(pd.get("name").toString().getBytes("ISO-8859-1"), "utf-8");
+                pd.put("name",keyword);
+                List<PageData> good = goodsService.findByGoodNameLike(page);
+                mv.setViewName("search");
+                mv.addObject("pd", pd);
+                mv.addObject("pds", good);
+            }else {
+                List<PageData> good = goodsService.findByGoodTypeAll(page);
+                mv.setViewName("search");
+                mv.addObject("pd", pd);
+                mv.addObject("pds", good);
+            }
+        } catch (Exception e) {
+            logger.error(e.toString(), e);
+        }
         return mv;
     }
 

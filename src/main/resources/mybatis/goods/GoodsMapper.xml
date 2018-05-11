@@ -93,8 +93,35 @@
 		where
 			type IN (1,5,3)
 	</select>
+	<select id="findByGoodTypeAlllistPage" parameterType="page" resultType="pd">
+		select
+			id,
+			name,
+			des,
+			price,
+			type,
+			picture,
+			status
+		from
+			t_goods
+		where
+			type IN (0,1,2,3,4,5,6)
+	</select>
+	<select id="findByGoodNameLikelistPage" parameterType="page" resultType="pd">
+		select
+		id,
+		name,
+		des,
+		price,
+		type,
+		picture,
+		status
+		from
+		t_goods
+		where
+		name like CONCAT(CONCAT('%', #{pd.name}),'%')
+	</select>
 
-	
 	<!-- 列表 -->
 	<select id="datalistPage" parameterType="page" resultType="pd">
 		select

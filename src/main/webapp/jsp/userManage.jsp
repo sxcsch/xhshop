@@ -40,33 +40,23 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>用户名</th>
-                                    <th>登录密码</th>
                                     <th>真实姓名</th>
                                     <th>地址</th>
                                     <th>电话</th>
                                     <th>邮箱</th>
                                     <th>操作</th>
                                 </tr>
-                                <tr>
-                                    <td>01</td>
-                                    <td>小蜜蜂</td>
-                                    <td>123456</td>
-                                    <td>张三</td>
-                                    <td>上海浦东</td>
-                                    <td>12345678945</td>
-                                    <td>12345678945@163.com</td>
-                                    <td><a href="">删除</a></td>
-                                </tr>
-                                <tr>
-                                    <td>02</td>
-                                    <td>花花</td>
-                                    <td>123456</td>
-                                    <td>赵四</td>
-                                    <td>上海徐汇</td>
-                                    <td>12345678945</td>
-                                    <td>12345678945@163.com</td>
-                                    <td><a href="">删除</a></td>
-                                </tr>
+                                <c:forEach items="${userList}" var="user">
+                                    <tr>
+                                        <td>${user.usersId}</td>
+                                        <td>${user.sortName}</td>
+                                        <td>${user.usersTrueName}</td>
+                                        <td>${user.usersAddrss}</td>
+                                        <td>${user.usersPhone}</td>
+                                        <td>${user.usersEmail}</td>
+                                        <td><a href="">删除</a></td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>
@@ -83,12 +73,12 @@
                     </dl>
                     <dl class="fore2">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="" class="curr">用户管理</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/page/user" class="curr">用户管理</a>
                         </dt>
                     </dl>
                     <dl class="fore3">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/user/showMyUser">商品管理</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/page/goods">商品管理</a>
                         </dt>
                     </dl>
 

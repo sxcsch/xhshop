@@ -99,7 +99,7 @@
 		
 		<div id="preview">
 			<div id="spec-n1" class="jqzoom" clstag="shangpin|keycount|product|spec-n1">
-				<img data-img="1" width="350" height="350" src="images/13.jpg" alt="${item.title}"  jqimg="${item.images[0]}"/>
+				<img data-img="1" width="350" height="350" src="data:image/png;base64,${pds.picture}"/>
 			</div>
 
 			<div id="short-share">
