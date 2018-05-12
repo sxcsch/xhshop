@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<base href="<%=basePath%>">
 <div class="w" clstag="homepage|keycount|home2013|37a">
 	<div id="service-2013">
 		<dl class="fore1">
@@ -62,4 +67,4 @@
 <div class="w" clstag="homepage|keycount|home2013|38a">
 	<jsp:include page="footer-links.jsp"></jsp:include>
 </div>
-<script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
+<script type="text/javascript" src="<%=basePath%>/js/jquery-1.6.4.js"></script>

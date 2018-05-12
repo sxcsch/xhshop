@@ -4,20 +4,25 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<base href="<%=basePath%>">
 <head>
 	<meta http-equiv="Cache-Control" content="max-age=300" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>爱上鲜花-企业团购</title>
 	<meta name="Keywords" content="" />
 	<meta name="description" content="" />
-	<link rel="stylesheet" type="text/css" href="/css/base.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="/css/myjd.common.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="/css/myjd.info.css" media="all" />
-	<link rel="stylesheet" href="/css/tg.css">
-	<script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/base.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/myjd.common.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/myjd.info.css" media="all" />
+	<link rel="stylesheet" href="<%=basePath%>/css/tg.css">
+	<script type="text/javascript" src="<%=basePath%>/js/jquery-1.6.4.js"></script>
 </head>
 <body>
-<script type="text/javascript" src="/js/base-2011.js" charset="utf-8"></script>
+<script type="text/javascript" src="<%=basePath%>/js/base-2011.js" charset="utf-8"></script>
 <!-- header start -->
 <jsp:include page="commons/header.jsp" />
 <!-- header end -->
@@ -30,7 +35,7 @@
 		</div>
 		<div class="lanMain">
 			<div class="lanImg">
-				<img src="images/13.jpg" alt="">
+				<img src="<%=basePath%>/images/13.jpg" alt="">
 			</div>
 			<div class="lanWen">
 				<div class="tgTit">[最新团购价]</div>

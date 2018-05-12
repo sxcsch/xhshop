@@ -1,21 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<base href="<%=basePath%>">
 <head>
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
     <title>注册-个人用户</title>
-    <link type="text/css" rel="stylesheet" href="/css/regist.personal.css"/>
-    <link type="text/css" rel="stylesheet" href="/css/passport.base.css"/>
-    <script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
+    <link type="text/css" rel="stylesheet" href="<%=basePath%>/css/regist.personal.css"/>
+    <link type="text/css" rel="stylesheet" href="<%=basePath%>/css/passport.base.css"/>
+    <script type="text/javascript" src="<%=basePath%>/js/jquery-1.6.4.js"></script>
 </head>
 <body>
 <div class="w" id="logo">
     <div>
-    	<a href="http://localhost:8082">
-    		<img src="/images/logo.png" alt="鲜花商城" width="170" height="60"/>
+    	<a>
+    		<img src="<%=basePath%>/images/logo.png" alt="鲜花商城" width="170" height="60"/>
     	</a> <b></b>
     </div>
 </div>

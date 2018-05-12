@@ -1,14 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ page session="false" %>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<head><base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>鲜花网上商城-鲜花综合网购首选-正品低价、品质保障、货到付款、配送及时、放心服务、轻松购物！</title>
 <meta name="description" content="鲜花网上商城">
-<link href="/css/taotao.css" rel="stylesheet"/>
-	<script src="/js/jquery-1.6.4.js"></script>
+<link href="<%=basePath%>/css/taotao.css" rel="stylesheet"/><script src="<%=basePath%>/js/jquery-1.6.4.js"></script>
 <script type="text/javascript">
 	window.pageConfig={
 	compatible:true,

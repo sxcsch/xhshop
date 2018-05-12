@@ -2,14 +2,19 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<base href="<%=basePath%>">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>爱上鲜花</title>
 	<script>var jdpts = new Object(); jdpts._st = new Date().getTime();</script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="/css/taotao.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="/css/pshow.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/taotao.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/pshow.css" media="all" />
 	<style>
 		#sidepanel{
 			display: none!important;
@@ -175,8 +180,8 @@
 	</div><!--right end-->
 	
 	<div class="left">
-		<div id="miaozhen7886" class="m"><img data-img="2" width="211" height="261" src="images/10.jpg" class="loading-style2"></div>
-		<div id="miaozhen7887" class="m"><img data-img="2" width="211" height="261" src="images/12.jpg" class="loading-style2"></div>
+		<div id="miaozhen7886" class="m"><img data-img="2" width="211" height="261" src="<%=basePath%>/images/10.jpg" class="loading-style2"></div>
+		<div id="miaozhen7887" class="m"><img data-img="2" width="211" height="261" src="<%=basePath%>/images/12.jpg" class="loading-style2"></div>
 	</div><!--left end-->
 	<%--<span class="clr"></span>--%>
 </div>
@@ -189,6 +194,6 @@
 <!-- footer start -->
 <jsp:include page="commons/footer.jsp" />
 <!-- footer end -->
-<script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
+<script type="text/javascript" src="<%=basePath%>/js/jquery-1.6.4.js"></script>
 </body>
 </html>

@@ -2,6 +2,11 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<base href="<%=basePath%>">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,14 +15,14 @@
 	<title>爱上鲜花-花语大全</title>
 	<meta name="Keywords" content="" />
 	<meta name="description" content="" />
-	<link rel="stylesheet" type="text/css" href="/css/base.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="/css/myjd.common.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="/css/myjd.info.css" media="all" />
-	<link rel="stylesheet" href="/css/language.css">
-	<script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/base.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/myjd.common.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/myjd.info.css" media="all" />
+	<link rel="stylesheet" href="<%=basePath%>/css/language.css">
+	<script type="text/javascript" src="<%=basePath%>/js/jquery-1.6.4.js"></script>
 </head>
 <body>
-<script type="text/javascript" src="/js/base-2011.js" charset="utf-8"></script>
+<script type="text/javascript" src="<%=basePath%>/js/base-2011.js" charset="utf-8"></script>
 <!-- header start -->
 <jsp:include page="commons/header.jsp" />
 <!-- header end -->
@@ -40,7 +45,7 @@
 			<div class="lanWen">
 				<div class="lanTit1">玫瑰的花语</div>
 				<div class="wenList">
-					<div class="wenImg"><img src="images/flower/1.jpg" alt=""></div>
+					<div class="wenImg"><img src="<%=basePath%>/images/flower/1.jpg" alt=""></div>
 					<div class="wenRight">
 						<div class="wenName">红玫瑰</div>
 						<div class="floSend"><span>送花对象：</span>朋友、恋人、爱人</div>
@@ -49,7 +54,7 @@
 					</div>
 				</div>
 				<div class="wenList">
-					<div class="wenImg"><img src="images/flower/2.jpg" alt=""></div>
+					<div class="wenImg"><img src="<%=basePath%>/images/flower/2.jpg" alt=""></div>
 					<div class="wenRight">
 						<div class="wenName">白玫瑰</div>
 						<div class="floSend"><span>送花对象：</span>朋友、爱人</div>
@@ -68,7 +73,7 @@
 			<div class="lanWen">
 				<div class="lanTit1">郁金香的花语</div>
 				<div class="wenList">
-					<div class="wenImg"><img src="images/flower/3.jpg" alt=""></div>
+					<div class="wenImg"><img src="<%=basePath%>/images/flower/3.jpg" alt=""></div>
 					<div class="wenRight">
 						<div class="wenName">白色郁金香</div>
 						<div class="floSend"><span>送花对象：</span>朋友、同事、长辈、情人</div>
@@ -77,7 +82,7 @@
 					</div>
 				</div>
 				<div class="wenList">
-					<div class="wenImg"><img src="images/flower/4.jpg" alt=""></div>
+					<div class="wenImg"><img src="<%=basePath%>/images/flower/4.jpg" alt=""></div>
 					<div class="wenRight">
 						<div class="wenName">黄色郁金香</div>
 						<div class="floSend"><span>送花对象：</span>爱人、老师、客户、领导/长辈</div>
@@ -94,7 +99,7 @@
 			<div class="lanWen">
 				<div class="lanTit1">紫罗兰的花语</div>
 				<div class="wenList">
-					<div class="wenImg"><img src="images/flower/5.jpg" alt=""></div>
+					<div class="wenImg"><img src="<%=basePath%>/images/flower/5.jpg" alt=""></div>
 					<div class="wenRight">
 						<div class="wenName">白色紫罗兰</div>
 						<div class="floLan"><span>花语：</span>诚实、清凉，让我们抓住幸福的机会吧</div>
@@ -102,7 +107,7 @@
 					</div>
 				</div>
 				<div class="wenList">
-					<div class="wenImg"><img src="images/flower/6.jpg" alt=""></div>
+					<div class="wenImg"><img src="<%=basePath%>/images/flower/6.jpg" alt=""></div>
 					<div class="wenRight">
 						<div class="wenName">粉色紫罗兰</div>
 						<div class="floLan"><span>花语：</span>誓言</div>
@@ -113,7 +118,7 @@
 			<div class="lanWen">
 				<div class="lanTit1">马蹄莲的花语</div>
 				<div class="wenList">
-					<div class="wenImg"><img src="images/flower/7.jpg" alt=""></div>
+					<div class="wenImg"><img src="<%=basePath%>/images/flower/7.jpg" alt=""></div>
 					<div class="wenRight">
 						<div class="wenName">白色马蹄莲</div>
 						<div class="floSend"><span>送花对象：</span>朋友、亲人、爱人、同事、情人</div>
@@ -122,7 +127,7 @@
 					</div>
 				</div>
 				<div class="wenList">
-					<div class="wenImg"><img src="images/flower/8.jpg" alt=""></div>
+					<div class="wenImg"><img src="<%=basePath%>/images/flower/8.jpg" alt=""></div>
 					<div class="wenRight">
 						<div class="wenName">红色马蹄莲</div>
 						<div class="floSend"><span>送花对象：</span>朋友、亲人、爱人、同事</div>
@@ -134,7 +139,7 @@
 			<div class="lanWen">
 				<div class="lanTit1">水仙花的花语</div>
 				<div class="wenList">
-					<div class="wenImg"><img src="images/flower/9.jpg" alt=""></div>
+					<div class="wenImg"><img src="<%=basePath%>/images/flower/9.jpg" alt=""></div>
 					<div class="wenRight">
 						<div class="wenName">中国水仙花</div>
 						<div class="floSend"><span>送花对象：</span>朋友、爱人、恋人</div>
@@ -143,7 +148,7 @@
 					</div>
 				</div>
 				<div class="wenList">
-					<div class="wenImg"><img src="images/flower/10.jpg" alt=""></div>
+					<div class="wenImg"><img src="<%=basePath%>/images/flower/10.jpg" alt=""></div>
 					<div class="wenRight">
 						<div class="wenName">西洋水仙花</div>
 						<div class="floSend"><span>送花对象：</span>朋友、爱人、情人、恋人、所爱的人</div>

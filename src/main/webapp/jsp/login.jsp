@@ -10,14 +10,14 @@
     <base href="<%=basePath%>">
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
     <title>登录鲜花商城</title>
-    <link type="text/css" rel="stylesheet" href="/css/login.css"/>
-    <script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
+    <link type="text/css" rel="stylesheet" href="<%=basePath%>/css/login.css"/>
+    <script type="text/javascript" src="<%=basePath%>/js/jquery-1.6.4.js"></script>
 </head>
 <body>
 <div class="w">
     <div id="logo">
     	<a href="#" clstag="passport|keycount|login|01">
-    		<img src="/images/logo.png" alt="鲜花" width="170" height="60"/>
+    		<img src="<%=basePath%>/images/logo.png" alt="鲜花" width="170" height="60"/>
     	</a><b></b>
    	</div>
 </div>
