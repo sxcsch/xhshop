@@ -899,14 +899,16 @@
 .form .itxt, .form .selt, .form .sele, .form .area {
 	line-height: 18px;
 	border: 1px solid #ccc;
-	padding: 5px;
-	float: none
+	float: none;
+	box-sizing: border-box;
+	padding: 0 5px;
 }
 
 .form .text {
 	line-height: 18px;
 	border: 1px solid #ccc;
-	padding: 5px
+	box-sizing: border-box;
+	padding: 0 5px;
 }
 
 .form .selt, .form .sele {
@@ -918,9 +920,10 @@
 }
 
 .form .itxt, .form .text {
-	height: 18px;
-	width: 127px;
-	padding: 5px 23px 5px 5px
+	height: 30px;
+	width: 180px;
+	box-sizing: border-box;
+	line-height: 30px;
 }
 
 .form .itxt1 {
@@ -2378,4 +2381,34 @@ table {
 
 .qa-w5 {
 	width: 800px
+}
+#zt{
+	width:180px;
+	height:30px;
+	line-height: 30px;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+#ss,#xx{
+	text-align: center;
+	font-size: 14px;
+	color:#333;
+	line-height: 30px;
+}
+#zl{
+	width:180px;
+	height:30px;
+	line-height: 30px;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+#zl option{
+	text-align: center;
+	font-size: 14px;
+	color:#333;
+	line-height: 30px;
+}
+.imgSel{
+	border:0!important;
+	padding-top: 5px!important;
 }

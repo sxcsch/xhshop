@@ -31,7 +31,8 @@ public class TypeService {
      */
     public PageData findTypeById(PageData pd)throws Exception {
         TType tType = new TType();
-        tType.setSortid(Integer.parseInt(pd.getString("sortid")));
+        Integer id = (Integer) pd.get("sortid");
+        tType.setSortid(id);
         return (PageData)daoSupport.findForObject("TTypeMapper.selectByPrimaryKey", tType);
     }
 

@@ -37,14 +37,26 @@ public class OrderService {
 	public void edit(PageData pd)throws Exception{
 		dao.update("OrderMapper.edit", pd);
 	}
-	
+	/*
+	* 修改
+	*/
+	public void creat(PageData pd)throws Exception{
+		dao.update("OrderMapper.creat", pd);
+	}
 	/*
 	*列表
 	*/
 	public List<PageData> list(Page page)throws Exception{
 		return (List<PageData>)dao.findForList("OrderMapper.datalistPage", page);
 	}
-	
+
+	/*
+	*列表
+	*/
+	public List<PageData> findOrderByStatus(PageData page)throws Exception{
+		return (List<PageData>)dao.findForList("OrderMapper.findOrderByStatus", page);
+	}
+
 	/*
 	*列表(全部)
 	*/

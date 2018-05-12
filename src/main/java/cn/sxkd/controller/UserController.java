@@ -108,6 +108,19 @@ public class UserController extends BaseController{
     }
 
     /*
+    删除
+     */
+    @RequestMapping("/del")
+    public void del(){
+        PageData pd = this.getPageData();
+        try{
+            userService.delUserById(pd);
+        }catch (Exception e){
+            logger.error(e);
+        }
+    }
+
+    /*
     寻找Id用户
      */
     @RequestMapping("/selectById")

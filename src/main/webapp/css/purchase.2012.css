@@ -220,21 +220,22 @@ a.btn:hover,a.btn:hover span {
 .progress li.complete b {background-position:0 -50px;}
 
 .cart {
-	padding-bottom: 20px
+	background: #fff;
+	margin-bottom: 20px;
 }
 .cart .cart-hd {
 	height: 35px;
+	background: #f5f5f5;
 }
 .cart .cart-hd h2 {
 	width: 100px;
 	float: left;
 }
 .cart h2 {
-	height: 20px;
-	margin-bottom: 15px;
-	line-height: 100px;
+	height: 35px;
+	line-height: 35px;
 	overflow: hidden;
-	background: url(../images/my_cart_title.png) no-repeat left top;
+	color:#333;
 }
 .cart .cart-hd span, .cart .cart-hd a {
 	float: left;
@@ -289,7 +290,6 @@ a.btn:hover,a.btn:hover span {
 }
 .cart-inner {
 	border: 1px solid #ddd;
-	border-top:2px solid #999;
 }
 .cart-inner .cart-thead {
 	height: 35px;
@@ -305,7 +305,8 @@ a.btn:hover,a.btn:hover span {
 	float: left;
 	color: #666;
 	line-height: 35px;
-	text-align: center
+	text-align: center;
+	margin-right: 56px;
 }
 .cart-thead .t-checkbox {
 	line-height: normal;
@@ -321,14 +322,25 @@ a.btn:hover,a.btn:hover span {
 	line-height: 35px;
 }
 .cart-thead .t-goods {
-	width: 309px;
+	width:100px;
+	margin-right: 47px;
 }
 .cart-thead .t-price {
-	width: 128px;
-	text-align: right;/*20130701 shijianguo*/
+	width: 99px;
+	margin-right: 50px!important;
 }
 .cart-thead .t-promotion {
 	width: 149px;
+}
+.t-inventory{
+	width:50px!important;
+	margin-right: 50px!important;
+}
+.t-quantity{
+	margin-right: 50px!important;
+}
+.t-action{
+	margin-right: 0!important;
 }
 .cart-thead .t-action {
 	border-right: 0;
@@ -380,7 +392,7 @@ a.btn:hover,a.btn:hover span {
 	height: auto!important;
 }
 .cart-tbody .p-checkbox {
-	width: 50px;
+	width: 100px;
 	height: 52px;
 }
 .cart-tbody .p-checkbox input {
@@ -416,9 +428,10 @@ a.btn:hover,a.btn:hover span {
 	line-height: 18px;
 }
 .cart-tbody .p-price {
-	width: 130px;
-	text-align: right;
+	width: 105px;
+	text-align: center;
 	line-height: 52px;
+	margin-right: 50px;
 }
 .cart-tbody .price {
 	/*padding-right: 10px; 20130701 shijianguo*/
@@ -468,16 +481,23 @@ a.btn:hover,a.btn:hover span {
 .cart-tbody .p-inventory {
 	color: #999;
 }
-.cart-tbody .p-inventory,.cart-tbody .p-quantity {
+.cart-tbody .p-quantity {
 	width: 100px;
 	text-align: center;
 }
-.cart-tbody .p-inventory,.cart-tbody .p-remove {
+.cart-tbody .p-inventory{
+	width:50px;
+	text-align: center;
+	line-height: 52px;
+	margin-right: 50px;
+}
+.cart-tbody .p-remove {
 	line-height: 52px;
 	text-align: center;
 }
 .cart-tbody .p-quantity {
 	line-height: 52px;
+	margin-right: 50px;
 }
 .cart-tbody .p-quantity .quantity-form {
 	width: 76px;
@@ -2367,7 +2387,6 @@ color:#999;
 .ui-ceilinglamp-current .cart-total-2014 {
 	border:1px solid #ddd;
 	margin:0 -1px;
-	box-shadow:0 -1px 8px rgba(0,1,1,0.3);
 }
 .cart-total-2014 a.btn:hover span {
 	color:#333
@@ -2492,3 +2511,27 @@ background-color:#f05356;color:#fff;background-image:-webkit-gradient(linear,0 0
 -webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;
 }
 .combine-box .combine-pay-btn:hover{background-color:#e74649;color:#fff;background-image:-webkit-gradient(linear, from(#e74649), to(#df3134));background-image:-moz-linear-gradient(top, #e74649, #df3134);-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#E74649', endColorstr='#DF3134');background-image:-o-linear-gradient(top, #e74649, #df3134);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#E74649', endColorstr='#DF3134'); text-decoration:none;}
+
+
+.cartCon{
+	width:100%;
+	overflow: hidden;
+	background: #f5f5f5;
+}
+.p{
+	width:200px;
+	height:52px;
+	line-height: 52px;
+	float:left;
+	margin-right: 12px;
+	box-sizing: border-box;
+	text-align: center;
+}
+.p-name{
+	width:111px;
+	height:52px;
+	line-height: 52px!important;
+	float:left;
+	box-sizing: border-box;
+	text-align: center;
+}

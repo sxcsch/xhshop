@@ -4,9 +4,11 @@ import cn.sxkd.base.BaseController;
 import cn.sxkd.entity.Page;
 import cn.sxkd.entity.TUser;
 import cn.sxkd.service.GoodsService;
+import cn.sxkd.service.OrderService;
 import cn.sxkd.service.TypeService;
 import cn.sxkd.service.UserService;
 import cn.sxkd.tool.PageData;
+import org.apache.ibatis.jdbc.Null;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +34,8 @@ public class PageController extends BaseController {
     private UserService userService;
     @Autowired
     private TypeService typeService;
+    @Resource(name="orderService")
+    private OrderService orderService;
 
     @RequestMapping("/index")
     public ModelAndView index(){
@@ -140,6 +144,36 @@ public class PageController extends BaseController {
         return mv;
     }
 
+    @RequestMapping("/order")
+    public ModelAndView order(){
+        ModelAndView mv = this.getModelAndView();
+        mv.setViewName("order-cart");
+        TUser tUser = getSessionUserName();
+        try {
+            if (tUser!=null){
+                PageData pageData = new PageData();
+                pageData.put("user_id",tUser.getUsersid());
+                List<PageData> list = orderService.findOrderByUserId(pageData);
+                Double countRMB = 0.0;
+                if (list!=null&&list.size()>0){
+                    for (PageData p:list){
+                        pageData.put("id",p.get("goods_id"));
+                        PageData good = goodsService.findById(pageData);
+                        Double price = Double.parseDouble(good.get("price").toString());
+                        Integer amount = Integer.parseInt(p.get("amount").toString());
+                        countRMB+=price*amount;
+                        p.put("good",good);
+                    }
+                }
+                mv.addObject("countRMB",countRMB);
+                mv.addObject("list",list);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mv;
+    }
+
     @RequestMapping("/search")
     public ModelAndView search(Page page){
         ModelAndView mv = this.getModelAndView();
@@ -166,4 +200,31 @@ public class PageController extends BaseController {
         return mv;
     }
 
+    @RequestMapping("/orderMsg ")
+    public ModelAndView orderMsg (){
+        ModelAndView mv = this.getModelAndView();
+        try {
+            List<PageData> order = orderService.findOrderByStatus(getPageData());
+            if (order!=null&&order.size()>0){
+                for (PageData p:order) {
+                    PageData pageData =new PageData();
+
+                    pageData.put("id",p.get("goods_id"));
+                    PageData good = goodsService.findById(pageData);
+                    p.put("good",good);
+                    pageData.put("sortid",p.get("type_id"));
+                    PageData types = typeService.findTypeById(pageData);
+                    p.put("type",types);
+                    pageData.put("usersid",p.get("user_id"));
+                    TUser user = userService.selectByPrimaryKeyId(pageData);
+                    p.put("user",user);
+                }
+            }
+            mv.addObject("orderList",order);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        mv.setViewName("orderManage");
+        return mv;
+    }
 }

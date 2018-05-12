@@ -124,7 +124,7 @@
             <h3>我的交易</h3>
             <dl class="fore1">
                 <dt>
-                    <a target="_blank" clstag="homepage|keycount|home2013|hdd" id="_MYJD_ordercenter" href="/order/showMyOrder" class="curr">我的信息</a>
+                    <a target="_blank" clstag="homepage|keycount|home2013|hdd" id="_MYJD_ordercenter" href="/user/showMyUser" class="curr">我的信息</a>
                 </dt>
             </dl>
             <dl class="fore2">
@@ -137,7 +137,11 @@
                     <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/page/goods">商品管理</a>
                 </dt>
             </dl>
-
+            <dl class="fore3">
+                <dt>
+                    <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/page/orderMsg" class="curr">订单查看</a>
+                </dt>
+            </dl>
         </div>
     </div>
     <span class="clr"></span>

@@ -36,7 +36,7 @@ public class GoodsService {
 	public void edit(PageData pd)throws Exception{
 		dao.update("GoodsMapper.edit", pd);
 	}
-	
+
 	/*
 	*列表
 	*/

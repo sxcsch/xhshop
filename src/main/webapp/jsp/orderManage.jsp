@@ -33,47 +33,34 @@
                         <div class="userNav">
                             <span>当前位置：</span>
                             <a href="#">我的交易&nbsp;&gt;&nbsp;</a>
-                            <a href="#">商品管理</a>
+                            <a href="#">订单管理</a>
                         </div>
-                        <a href="/goods/goAdd" class="spAdd">添加</a>
                         <table width="830" cellspacing="0">
                             <tbody>
                                 <tr>
                                     <th>ID</th>
-                                    <th>商品名称</th>
-                                    <th>描述</th>
-                                    <th>价格</th>
+                                    <th>订单编号</th>
+                                    <th>用户ID</th>
                                     <th>种类</th>
-                                    <th>图片</th>
-                                    <th>操作</th>
+                                    <th>收货人信息</th>
+                                    <th>订单状态</th>
+                                    <th>订单金额</th>
+                                    <th>商品</th>
+                                    <th>数量</th>
                                 </tr>
-                                <c:forEach items="${goodsList}" var="goods">
+                                <c:forEach items="${orderList}" var="order">
                                     <tr>
-                                        <td>${goods.id}</td>
-                                        <td>${goods.name}</td>
-                                        <td class="spMs">${goods.des}</td>
-                                        <td>${goods.price}</td>
-                                        <td>${goods.types.sortName}</td>
-                                        <td class="spImg"><img src="data:image/png;base64,${goods.picture}" alt=""></td>
-                                        <td>
-                                            <a href="/goods/goEdit?id=${goods.id}" class="spModify">修改</a>
-                                            <a href="javascript:void(0)" onclick="del(${goods.id})" class="spDel">删除</a>
-                                        </td>
+                                        <td>${order.id}</td>
+                                        <td>${order.num}</td>
+                                        <td class="spMs">${order.user.sortname}</td>
+                                        <td>${order.type.sortName}</td>
+                                        <td>${order.take_info}</td>
+                                        <td class="spImg">已完成</td>
+                                        <td class="spImg">${order.price}</td>
+                                        <td class="spImg">${order.good.name}</td>
+                                        <td class="spImg">${order.amount}</td>
                                     </tr>
                                 </c:forEach>
-                                <script>
-                                    function del(id) {
-                                        $.ajax({
-                                            type: "POST",
-                                            url: "/goods/delete.do",
-                                            data: {'id':id},
-                                            dataType : "json",
-                                            success: function(respMsg){
-                                                location.href = "/page/goods";
-                                            }
-                                        });
-                                    }
-                                </script>
                             </tbody>
                         </table>
                     </div>

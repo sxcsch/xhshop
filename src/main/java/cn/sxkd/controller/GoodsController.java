@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 
 import cn.sxkd.base.BaseController;
@@ -18,13 +19,16 @@ import cn.sxkd.service.GoodsService;
 import cn.sxkd.service.TypeService;
 import cn.sxkd.tool.AppUtil;
 import cn.sxkd.tool.PageData;
+import cn.sxkd.tool.Pic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -50,7 +54,7 @@ public class GoodsController extends BaseController {
 		PageData pd = new PageData();
 		pd = this.getPageData();
 		try {
-			mv.setViewName("goods/goods_edit");
+			mv.setViewName("goods");
 			mv.addObject("msg", "save");
 			mv.addObject("pd", pd);
 		} catch (Exception e) {
@@ -63,14 +67,26 @@ public class GoodsController extends BaseController {
 	 * 新增
 	 */
 	@RequestMapping(value="/save")
-	public ModelAndView save() throws Exception{
-		logBefore(logger, "新增Goods");
+	public ModelAndView save(HttpServletRequest request,
+					 @RequestParam(value="picture",required=false) MultipartFile picture,
+					 @RequestParam(value="name",required=false) String name,
+					 @RequestParam(value="des",required=false) String des,
+					 @RequestParam(value="type",required=false) Integer type,
+					 @RequestParam(value="price",required=false) Double price,
+					 @RequestParam(value="status",required=false) Integer status
+	) throws Exception{
 		ModelAndView mv = this.getModelAndView();
+		String pic = Pic.pics(picture.getBytes());
 		PageData pd = new PageData();
 		pd = this.getPageData();
+		pd.put("name",name);
+		pd.put("des",des);
+		pd.put("type",type);
+		pd.put("price",price);
+		pd.put("status",status);
+		pd.put("picture",pic.getBytes());
 		goodsService.save(pd);
-		mv.addObject("msg","success");
-		mv.setViewName("save_result");
+		mv.setViewName("index");
 		return mv;
 	}
 	
@@ -96,15 +112,13 @@ public class GoodsController extends BaseController {
 	 * 修改
 	 */
 	@RequestMapping(value="/edit")
-	public ModelAndView edit() throws Exception{
+	@ResponseBody
+	public Object edit() throws Exception{
 		logBefore(logger, "修改Goods");
-		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
 		goodsService.edit(pd);
-		mv.addObject("msg","success");
-		mv.setViewName("save_result");
-		return mv;
+		return "success";
 	}
 	
 	/**
@@ -185,9 +199,8 @@ public class GoodsController extends BaseController {
 		pd = this.getPageData();
 		try {
 			pd = goodsService.findById(pd);	//根据ID读取
-			mv.setViewName("GoodsController/goods/goods_edit");
-			mv.addObject("msg", "edit");
-			mv.addObject("pd", pd);
+			mv.setViewName("goods");
+			mv.addObject("goods", pd);
 		} catch (Exception e) {
 			logger.error(e.toString(), e);
 		}						

@@ -89,7 +89,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="cn.sxkd.entity.TUser" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="pd" >
     select
     usersId, sortName, userPass, usersRePass, usersPassQuestion, usersPassReply, usersTrueName,
     usersAddrss, usersPhone, usersEmail
@@ -292,9 +292,35 @@
       usersEmail = #{usersemail,jdbcType=VARCHAR}
     where usersId = #{usersid,jdbcType=INTEGER}
   </update>
-  <select id="selectList" resultMap="pd" parameterType="pd">
+  <select id="selectList" resultType="pd" parameterType="pd">
     SELECT
     <include refid="Base_Column_List" />
     from t_user
+  </select>
+
+  <select id="selectUserByKey" resultType="pd" parameterType="pd" >
+    select
+    usersId, sortName, userPass, usersRePass, usersPassQuestion, usersPassReply, usersTrueName,
+    usersAddrss, usersPhone, usersEmail
+    from t_user
+    where
+    1=1
+    AND
+    sortName = #{sortname}
+  </select>
+  <delete id="delUserByID" parameterType="pd">
+    DELETE FROM t_user
+    WHERE usersId = #{usersid}
+  </delete>
+
+  <select id="selectByPrimaryKeyId" resultMap="BaseResultMap" parameterType="pd" >
+    select
+    usersId, sortName, userPass, usersRePass, usersPassQuestion, usersPassReply, usersTrueName,
+    usersAddrss, usersPhone, usersEmail
+    from t_user
+    where
+    1=1
+    AND
+    usersId = #{usersId}
   </select>
 </mapper>

@@ -38,9 +38,23 @@ public class UserService {
      * 通过用户ID来寻找用户信息
      */
     public TUser findUserById(PageData pd)throws Exception {
-        TUser tUser = new TUser();
-        tUser.setSortname(pd.get("sortname").toString());
-        return (TUser)daoSupport.findForObject("TUserMapper.selectByPrimaryKey", tUser);
+//        TUser tUser = new TUser();
+//        tUser.setSortname(pd.get("sortname").toString());
+        return (TUser)daoSupport.findForObject("TUserMapper.selectByPrimaryKey", pd);
+    }
+    /*
+         * 通过用户ID来寻找用户信息
+         */
+    public TUser selectByPrimaryKeyId(PageData pd)throws Exception {
+//        TUser tUser = new TUser();
+//        tUser.setSortname(pd.get("sortname").toString());
+        return (TUser)daoSupport.findForObject("TUserMapper.selectByPrimaryKeyId", pd);
+    }
+    /*
+     * 通过用户ID来寻找用户信息
+     */
+    public PageData findUserByIdPd(PageData pd)throws Exception {
+        return (PageData)daoSupport.findForObject("TUserMapper.selectUserByKey", pd);
     }
 
     /*
@@ -68,4 +82,7 @@ public class UserService {
         daoSupport.update("TUserMapper.updateByPrimaryKeySelective", pd);
     }
 
+    public void delUserById(PageData pd)throws Exception {
+        daoSupport.delete("TUserMapper.delUserByID",pd);
+    }
 }

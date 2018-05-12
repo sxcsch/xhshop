@@ -138,6 +138,24 @@ public class OrderController extends BaseController {
 		return map;
 	}
 
+	/*
+    保存
+     */
+	@RequestMapping("/create")
+	public ModelAndView create(){
+		PageData pd = this.getPageData();
+		ModelAndView mv = this.getModelAndView();
+		try{
+			TUser user = getSessionUserName();
+			pd.put("user_id",user.getUsersid());
+			orderService.creat(pd);
+		}catch (Exception e){
+			logger.error(e);
+		}
+		mv.setViewName("index");
+		return mv;
+	}
+
 	@RequestMapping("/showOrderCart")
 	public ModelAndView showOrderCart(){
 		ModelAndView mv = this.getModelAndView();

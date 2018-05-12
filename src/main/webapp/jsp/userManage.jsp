@@ -54,9 +54,26 @@
                                         <td>${user.usersAddrss}</td>
                                         <td>${user.usersPhone}</td>
                                         <td>${user.usersEmail}</td>
-                                        <td><a href="">删除</a></td>
+                                        <td>
+                                            <c:if test="${user.sortName!='admin'}">
+                                            <a onclick="del(${user.usersId})">删除</a>
+                                            </c:if>
+                                        </td>
                                     </tr>
                                 </c:forEach>
+                                <script>
+                                    function del(id) {
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "/user/del.do",
+                                            data: {'usersid':id},
+                                            dataType : "json",
+                                            success: function(respMsg){
+                                                location.href = "/page/user";
+                                            }
+                                        });
+                                    }
+                                </script>
                             </tbody>
                         </table>
                     </div>
@@ -68,7 +85,7 @@
                     <h3>我的交易</h3>
                     <dl class="fore1">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hdd" id="_MYJD_ordercenter" href="/order/showMyOrder">我的信息</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hdd" id="_MYJD_ordercenter" href="/user/showMyUser">我的信息</a>
                         </dt>
                     </dl>
                     <dl class="fore2">

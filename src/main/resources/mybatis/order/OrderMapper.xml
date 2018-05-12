@@ -117,6 +117,36 @@
 				t_orders a
 		where
 				a.user_id = #{user_id}
+		AND
+				a.status = 1
 	</select>
+	<select id="findOrderByStatus" parameterType="pd" resultType="pd">
+		select
+		a.id,
+		a.num,
+		a.user_id,
+		a.type_id,
+		a.take_info,
+		a.status,
+		a.price,
+		a.goods_id,
+		a.amount
+		from
+		t_orders a
+		where
+		a.status = 0
+	</select>
+
+	<!-- 修改 -->
+	<update id="creat" parameterType="pd">
+		update  t_orders
+		set
+		status=0,
+		take_info =#{take_info}
+		where
+		status = 1
+		AND
+		user_id = #{user_id}
+	</update>
 	
 </mapper>
