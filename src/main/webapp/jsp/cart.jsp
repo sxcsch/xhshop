@@ -65,12 +65,12 @@
                                 <div class="cell p-checkbox"><input data-bind="cbid:1" class="checkbox" type="checkbox" name="checkItem" checked="" value="11345721-1"></div>
                                 <div class="cell p-goods">
                                     <div class="p">
-                                        <a href="/item/${cart.id }.html" target="_blank">
+                                        <a href="<%=basePath%>/item/${cart.id }.html" target="_blank">
                                                 ${cart.num }
                                         </a>
                                     </div>
                                     <div class="p-name">
-                                        <a href="/item/${cart.good.id }.html" clstag="clickcart|keycount|xincart|productnamelink" target="_blank">${cart.good.name}</a>
+                                        <a href="<%=basePath%>/item/${cart.good.id }.html" clstag="clickcart|keycount|xincart|productnamelink" target="_blank">${cart.good.name}</a>
                                         <span class="promise411 promise411_11345721" id="promise411_11345721"></span>
                                     </div>
                                 </div>
@@ -85,7 +85,7 @@
                                         <a href="javascript:void(0);" class="increment" clstag="clickcart|keycount|xincart|add1" id="increment">+</a>
                                     </div>
                                 </div>
-                                <div class="cell p-remove"><a id="remove-11345721-1" data-more="removed-87.20-1" clstag="clickcart|keycount|xincart|btndel318558" class="cart-remove" href="/cart/delete/${cart.id}.html">删除</a>
+                                <div class="cell p-remove"><a id="remove-11345721-1" data-more="removed-87.20-1" clstag="clickcart|keycount|xincart|btndel318558" class="cart-remove" href="<%=basePath%>/cart/delete/${cart.id}.html">删除</a>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +116,7 @@
                     <div class="cart-total-2014">
                         <div class="cart-button">
                   <span class="check-comm-btns" id="checkout-jd">
-                      <a class="checkout" href="/page/order" clstag="clickcart|keycount|xincart|gotoOrderInfo" id="toSettlement">去结算<b></b></a>
+                      <a class="checkout" href="<%=basePath%>/page/order" clstag="clickcart|keycount|xincart|gotoOrderInfo" id="toSettlement">去结算<b></b></a>
                   </span>
                         </div>
                         <div class="total fr">

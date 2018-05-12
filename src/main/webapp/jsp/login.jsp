@@ -24,7 +24,7 @@
 <form id="formlogin" method="post" onsubmit="return false;">
     <div class=" w1" id="entry">
         <div class="mc " id="bgDiv">
-            <div id="entry-bg" clstag="passport|keycount|login|02" style="width: 500px; height: 355px; position: absolute; left: 5px; top: 6px; background: url(/images/2.jpg) 0px 0px no-repeat;">
+            <div id="entry-bg" clstag="passport|keycount|login|02" style="width: 500px; height: 355px; position: absolute; left: 5px; top: 6px; background: url(<%=basePath%>/images/2.jpg) 0px 0px no-repeat;">
 			</div>
             <div class="form ">
                 <div class="item fore1">
@@ -79,10 +79,10 @@
 				return true;
 			},
 			doLogin:function() {
-				$.post("/user/login", $("#formlogin").serialize(),function(data){
+				$.post("<%=basePath%>/user/login", $("#formlogin").serialize(),function(data){
 					if (data.status == 200) {
 						alert("登录成功！");
-							location.href = "page/index.do";
+							location.href = "<%=basePath%>/page/index.do";
 					} else {
 						alert("登录失败，原因是：" + data.msg);
 						$("#sortname").select();

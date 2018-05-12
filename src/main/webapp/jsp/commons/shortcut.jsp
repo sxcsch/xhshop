@@ -27,7 +27,7 @@
 				客户服务
 				<b></b>
 				<div class="dd">
-					<div><a href="/page/message" target="_blank">网站留言</a></div>
+					<div><a href="<%=basePath%>/page/message" target="_blank">网站留言</a></div>
 				</div>
 			</li>
 		</ul>

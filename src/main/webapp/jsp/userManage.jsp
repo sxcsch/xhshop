@@ -70,11 +70,11 @@
                                     function del(id) {
                                         $.ajax({
                                             type: "POST",
-                                            url: "/user/del.do",
+                                            url: "<%=basePath%>/user/del.do",
                                             data: {'usersid':id},
                                             dataType : "json",
                                             success: function(respMsg){
-                                                location.href = "/page/user";
+                                                location.href = "<%=basePath%>/page/user";
                                             }
                                         });
                                     }
@@ -90,20 +90,24 @@
                     <h3>我的交易</h3>
                     <dl class="fore1">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hdd" id="_MYJD_ordercenter" href="/user/showMyUser">我的信息</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hdd" id="_MYJD_ordercenter" href="<%=basePath%>/user/showMyUser">我的信息</a>
                         </dt>
                     </dl>
                     <dl class="fore2">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/page/user" class="curr">用户管理</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="<%=basePath%>/page/user" class="curr">用户管理</a>
                         </dt>
                     </dl>
                     <dl class="fore3">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/page/goods">商品管理</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="<%=basePath%>/page/goods">商品管理</a>
                         </dt>
                     </dl>
-
+                    <dl class="fore3">
+                        <dt>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="<%=basePath%>/page/orderMsg" class="curr">订单查看</a>
+                        </dt>
+                    </dl>
                 </div>
             </div>
             <span class="clr"></span>

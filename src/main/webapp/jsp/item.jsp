@@ -188,7 +188,7 @@
 	<script type="text/javascript">
         function addOrder(id) {
             var num = $('#buy-num').val();
-            window.location.href = "order/showCart?goods_id="+id+"&amount="+num;
+            window.location.href = "<%=basePath%>/order/showCart?goods_id="+id+"&amount="+num;
         }
 	</script>
 <!-- footer start -->

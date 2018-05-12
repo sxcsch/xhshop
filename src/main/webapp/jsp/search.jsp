@@ -41,12 +41,12 @@
 <c:forEach items="${pds}" var="item">
 <li class="item-book" bookid="11078102">
 	<div class="p-img">
-		<a target="_blank" href="/goods/searchId?id=${item.id }">
+		<a target="_blank" href="<%=basePath%>/goods/searchId?id=${item.id }">
 			<img src="data:image/png;base64,${item.picture}" width="160" height="160" data-img="1" data-lazyload="" />
 		</a>
 	</div>
 	<div class="p-name">
-		<a target="_blank" href="/goods/searchId?id=${item.id }">
+		<a target="_blank" href="<%=basePath%>/goods/searchId?id=${item.id }">
 			${item.name}
 		</a>
 	</div>

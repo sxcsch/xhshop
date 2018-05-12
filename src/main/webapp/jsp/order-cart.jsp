@@ -19,18 +19,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>订单结算页 -爱上鲜花</title>
 	<!--结算页面样式-->	
-	<link rel="stylesheet" type="text/css" href="/css/base.css" media="all" />
-    <link type="text/css" rel="stylesheet" href="/css/order-commons.css" source="widget"/>
-	<script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
-	<script type="text/javascript" src="/js/base.js"></script>	
-	<script type="text/javascript" src="/js/order.common.js"></script>
-	<script type="text/javascript" src="/js/jquery.checkout.js"></script>
+	<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/base.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="<%=basePath%>/css/order-commons.css" source="widget"/>
+	<script type="text/javascript" src="<%=basePath%>/js/jquery-1.6.4.js"></script>
+	<script type="text/javascript" src="<%=basePath%>/js/base.js"></script>
+	<script type="text/javascript" src="<%=basePath%>/js/order.common.js"></script>
+	<script type="text/javascript" src="<%=basePath%>/js/jquery.checkout.js"></script>
 </head>	<body id="mainframe">
 <jsp:include page="commons/shortcut.jsp" />
 <!--shortcut end-->
 
 <div class="w w1 header clearfix">
-    <div id="logo"><a href="/"><img src="/images/logo.png" alt=""></a></div>
+    <div id="logo"><a href="/"><img src="<%=basePath%>/images/logo.png" alt=""></a></div>
 </div>
 
 <!-- main -->
@@ -53,7 +53,7 @@
 			<div class="consignee-item item-selected"
 				consigneeId="137617472" id="consignee_index_div_137617472">
 				<b></b>
-				<form id="orderForm" style="width: 100%" action="/order/create" method="post">
+				<form id="orderForm" style="width: 100%" action="<%=basePath%>/order/create" method="post">
 					<input type="text" style="width: 100%" id="take_info" name="take_info"/>
 				</form>
 
@@ -118,7 +118,7 @@
 <div class="step-tit">
 	<h3>送货清单</h3>
 	<div class="extra-r">
-		<a href="/order/showCart" id="cartRetureUrl" class="return-edit ftx-05">返回修改购物车</a>
+		<a href="<%=basePath%>/order/showCart" id="cartRetureUrl" class="return-edit ftx-05">返回修改购物车</a>
 	</div>
 </div>
 <div class="step-cont" id="skuPayAndShipment-cont">

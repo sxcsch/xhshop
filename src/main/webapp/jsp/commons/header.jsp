@@ -29,7 +29,7 @@
 		<!--search end-->
 		<div id="my360buy-2013">
 			<dl>
-				<dt class="ld"><s></s><a href="user/showMyUser" clstag="homepage|keycount|home2012|04a">我的鲜花</a><b></b></dt>
+				<dt class="ld"><s></s><a href="<%=basePath%>/user/showMyUser" clstag="homepage|keycount|home2012|04a">我的鲜花</a><b></b></dt>
 				<dd>
 					<div class="loading-style1"><b></b>加载中，请稍候...</div>
 				</dd>
@@ -38,7 +38,7 @@
 		<!--my360buy end-->
 		<div id="settleup-2013" clstag="homepage|keycount|home2013|05a">
 			<dl>
-				<dt class="ld"><s></s><span class="shopping"><span id="shopping-amount"></span></span><a href="order/showCart" id="settleup-url">去购物车结算</a> <b></b> </dt>
+				<dt class="ld"><s></s><span class="shopping"><span id="shopping-amount"></span></span><a href="<%=basePath%>/order/showCart" id="settleup-url">去购物车结算</a> <b></b> </dt>
 			</dl>
 		</div>
 		<!--settleup end-->
@@ -53,43 +53,43 @@
 				<div id="_JD_ALLSORT" class="mc">
 					<div class="item fore1">
 						<span data-split="1"><h3>
-								<a href="/goods/searchType?type=0">花束</a>
+								<a href="<%=basePath%>/goods/searchType?type=0">花束</a>
 							</h3>
 							<s></s></span>
 					</div>
 					<div class="item fore2">
 						<span data-split="1"><h3>
-								<a href="/goods/searchType?type=1">花盒</a>
+								<a href="<%=basePath%>/goods/searchType?type=1">花盒</a>
 							</h3>
 							<s></s></span>
 					</div>
 					<div class="item fore3">
 						<span data-split="1"><h3>
-								<a href="/goods/searchType?type=2">瓶花</a>
+								<a href="<%=basePath%>/goods/searchType?type=2">瓶花</a>
 							</h3>
 							<s></s></span>
 					</div>
 					<div class="item fore4">
 						<span data-split="1"><h3>
-								<a href="/goods/searchType?type=3">精品鲜花</a>
+								<a href="<%=basePath%>/goods/searchType?type=3">精品鲜花</a>
 							</h3>
 							<s></s></span>
 					</div>
 					<div class="item fore5">
 						<span data-split="1"><h3>
-								<a href="/goods/searchType?type=4">果篮</a>
+								<a href="<%=basePath%>/goods/searchType?type=4">果篮</a>
 							</h3>
 							<s></s></span>
 					</div>
 					<div class="item fore6">
 						<span data-split="1"><h3>
-								<a href="/goods/searchType?type=5">桌面花篮</a>
+								<a href="<%=basePath%>/goods/searchType?type=5">桌面花篮</a>
 							</h3>
 							<s></s></span>
 					</div>
 					<div class="item fore7">
 						<span data-split="1"><h3>
-								<a href="/goods/searchType?type=6">开业花篮</a>
+								<a href="<%=basePath%>/goods/searchType?type=6">开业花篮</a>
 							</h3>
 							<s></s></span>
 					</div>
@@ -101,11 +101,11 @@
 			</div>
 			<div id="treasure" clstag="homepage|keycount|home2013|08a"></div>
 				<ul id="navitems-2013">
-					<li class="fore1" id="nav-home" clstag="homepage|keycount|home2013|07a"><a href="/">首页</a></li>
-					<li class="fore5" id="nav-auction" clstag="homepage|keycount|home2013|07e"><a href="/page/search?type=2">鲜花</a></li>
-					<li class="fore2" id="nav-fashion" clstag="homepage|keycount|home2013|07b"><a href="/page/flowerLanguage">花语大全</a></li>
-					<li class="fore4" id="nav-tuan" clstag="homepage|keycount|home2013|07d"><a href="/page/searchItem" target="_blank">设计师臻选</a></li>
-					<li class="fore3" id="nav-chaoshi" clstag="homepage|keycount|home2013|07c"><a href="/page/business">企业团购</a></li>
+					<li class="fore1" id="nav-home" clstag="homepage|keycount|home2013|07a"><a href="<%=basePath%>/">首页</a></li>
+					<li class="fore5" id="nav-auction" clstag="homepage|keycount|home2013|07e"><a href="<%=basePath%>/page/search?type=2">鲜花</a></li>
+					<li class="fore2" id="nav-fashion" clstag="homepage|keycount|home2013|07b"><a href="<%=basePath%>/page/flowerLanguage">花语大全</a></li>
+					<li class="fore4" id="nav-tuan" clstag="homepage|keycount|home2013|07d"><a href="<%=basePath%>/page/searchItem" target="_blank">设计师臻选</a></li>
+					<li class="fore3" id="nav-chaoshi" clstag="homepage|keycount|home2013|07c"><a href="<%=basePath%>/page/business">企业团购</a></li>
 				</ul>
 		</div>
 	</div>

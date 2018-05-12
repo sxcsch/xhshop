@@ -15,14 +15,14 @@
     <title>商品管理- 爱上鲜花</title>
     <meta name="Keywords" content="" />
     <meta name="description" content="" />
-    <link rel="stylesheet" type="text/css" href="/css/base.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="/css/myjd.common.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="/css/myjd.info.css" media="all" />
-    <script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
-    <link rel="stylesheet" href="/css/userManage.css">
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/base.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/myjd.common.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/myjd.info.css" media="all" />
+    <script type="text/javascript" src="<%=basePath%>/js/jquery-1.6.4.js"></script>
+    <link rel="stylesheet" href="<%=basePath%>/css/userManage.css">
 </head>
 <body>
-<script type="text/javascript" src="/js/base-2011.js" charset="utf-8"></script>
+<script type="text/javascript" src="<%=basePath%>/js/base-2011.js" charset="utf-8"></script>
 <!-- header start -->
 <jsp:include page="commons/header.jsp" />
 <!-- header end -->
@@ -77,22 +77,22 @@
                     <h3>我的交易</h3>
                     <dl class="fore1">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hdd" id="_MYJD_ordercenter" href="/user/showMyUser">我的信息</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hdd" id="_MYJD_ordercenter" href="<%=basePath%>/user/showMyUser">我的信息</a>
                         </dt>
                     </dl>
                     <dl class="fore2">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/page/user">用户管理</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="<%=basePath%>/page/user">用户管理</a>
                         </dt>
                     </dl>
                     <dl class="fore3">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/page/goods" class="curr">商品管理</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="<%=basePath%>/page/goods" class="curr">商品管理</a>
                         </dt>
                     </dl>
                     <dl class="fore3">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/page/orderMsg" class="curr">订单查看</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="<%=basePath%>/page/orderMsg" class="curr">订单查看</a>
                         </dt>
                     </dl>
                 </div>

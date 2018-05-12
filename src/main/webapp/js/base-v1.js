@@ -3,7 +3,7 @@
  */
  function addOrder(id) {
         var num = $('#buy-num').val();
-        window.location.href = "order/showOrderCart?goods_id="+id+"&amount="+num;
+        window.location.href = "<%=basePath%>/order/showOrderCart?goods_id="+id+"&amount="+num;
          // $.ajax({
          //     type: "POST",
          //     url: "/order/add.do",
@@ -22,22 +22,22 @@
 
      $.ajax({
          type: "POST",
-         url: "/user/update.do",
+         url: "<%=basePath%>/user/update.do",
          data: queryArray,
          dataType : "json",
          success: function(respMsg){
-             location.href = "user/showMyUser";
+             location.href = "<%=basePath%>user/showMyUser";
          }
      });
  }
 function login() {
-    return location.href = "user/showLogin";
+    return location.href = "<%=basePath%>/user/showLogin";
 }
  function outLogin() {
-     return location.href = "page/outLogin";
+     return location.href = "<%=basePath%>/page/outLogin";
  }
 function regist() {
-    return location.href = "user/showRegister";
+    return location.href = "<%=basePath%>/user/showRegister";
 }
 function createCookie(a, b, c, d) {
     var d = d ? d : "/";

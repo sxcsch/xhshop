@@ -33,7 +33,7 @@
         </ul>
         <div class="extra">
         <span>我已经注册，现在就&nbsp;
-        	<a href="/user/showLogin" class="flk13">登录</a>
+        	<a href="<%=basePath%>/user/showLogin" class="flk13">登录</a>
         </span>
         </div>
     </div>
@@ -214,7 +214,7 @@
 				//检查用户是否已经被占用
                 var sortname = $("#sortname").val();
 				$.ajax({
-	            	url : "/user/selectById?sortname="+sortname,
+	            	url : "<%=basePath%>/user/selectById?sortname="+sortname,
 	            	success : function(data) {
                         console.log(data)
 	            		if (data.length==0) {
@@ -227,7 +227,7 @@
 				});
 		},
 		doSubmit:function() {
-			$.post("/user/register",$("#personRegForm").serialize(), function(data){
+			$.post("<%=basePath%>/user/register",$("#personRegForm").serialize(), function(data){
 			    console.log(data)
 				if(data.status == 200){
 					alert('用户注册成功，请登录！');
@@ -238,7 +238,7 @@
 			});
 		},
 		login:function() {
-			 location.href = "/user/showLogin";
+			 location.href = "<%=basePath%>/user/showLogin";
 			 return false;
 		},
 		reg:function() {

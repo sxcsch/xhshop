@@ -40,7 +40,7 @@
                             <a href="#">我的交易&nbsp;&gt;&nbsp;</a>
                             <a href="#">商品管理</a>
                         </div>
-                        <a href="/goods/goAdd" class="spAdd">添加</a>
+                        <a href="<%=basePath%>/goods/goAdd" class="spAdd">添加</a>
                         <table width="830" cellspacing="0">
                             <tbody>
                                 <tr>
@@ -61,7 +61,7 @@
                                         <td>${goods.types.sortName}</td>
                                         <td class="spImg"><img src="data:image/png;base64,${goods.picture}" alt=""></td>
                                         <td>
-                                            <a href="/goods/goEdit?id=${goods.id}" class="spModify">修改</a>
+                                            <a href="<%=basePath%>/goods/goEdit?id=${goods.id}" class="spModify">修改</a>
                                             <a href="javascript:void(0)" onclick="del(${goods.id})" class="spDel">删除</a>
                                         </td>
                                     </tr>
@@ -70,11 +70,11 @@
                                     function del(id) {
                                         $.ajax({
                                             type: "POST",
-                                            url: "/goods/delete.do",
+                                            url: "<%=basePath%>/goods/delete.do",
                                             data: {'id':id},
                                             dataType : "json",
                                             success: function(respMsg){
-                                                location.href = "/page/goods";
+                                                location.href = "<%=basePath%>/page/goods";
                                             }
                                         });
                                     }
@@ -90,22 +90,22 @@
                     <h3>我的交易</h3>
                     <dl class="fore1">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hdd" id="_MYJD_ordercenter" href="/user/showMyUser">我的信息</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hdd" id="_MYJD_ordercenter" href="<%=basePath%>/user/showMyUser">我的信息</a>
                         </dt>
                     </dl>
                     <dl class="fore2">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/page/user">用户管理</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="<%=basePath%>/page/user">用户管理</a>
                         </dt>
                     </dl>
                     <dl class="fore3">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/page/goods" class="curr">商品管理</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="<%=basePath%>/page/goods" class="curr">商品管理</a>
                         </dt>
                     </dl>
                     <dl class="fore3">
                         <dt>
-                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="/page/orderMsg" class="curr">订单查看</a>
+                            <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="<%=basePath%>/page/orderMsg" class="curr">订单查看</a>
                         </dt>
                     </dl>
                 </div>
