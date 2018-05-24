@@ -201,7 +201,7 @@
           		  id="order-submit"	onclick="$('#orderForm').submit()">
           	提交订单
           </button>
-                    <span class="total">应付总额：<strong id="payPriceId">￥<fmt:formatNumber value="${totalPrice}" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></strong>
+                    <span class="total">应付总额：<strong id="payPriceId">￥<fmt:formatNumber value="${countRMB}" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></strong>
           </span>
         </div>
         <span id="submit_message" style="display:none" class="submit-error" ></span>
