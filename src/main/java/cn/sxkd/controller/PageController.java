@@ -200,7 +200,7 @@ public class PageController extends BaseController {
         return mv;
     }
 
-    @RequestMapping("/orderMsg ")
+    @RequestMapping("/orderMsg")
     public ModelAndView orderMsg (){
         ModelAndView mv = this.getModelAndView();
         try {

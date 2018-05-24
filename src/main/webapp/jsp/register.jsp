@@ -61,13 +61,11 @@
                         <span class="label"><b class="ftx04">*</b>请设置密码：</span>
 
                         <div class="fl item-ifo">
-                            <input type="password" id="userpass" name="userpass" class="text" tabindex="2"
-                                   style="ime-mode:disabled;"
+                            <input type="password" id="userpass" name="userpass" class="text" tabindex="3"
                                    onpaste="return  false" autocomplete="off"/>
 
                             <label id="pwd_succeed" class="blank"></label>
                             <label id="pwd_error"></label>
-                            <span class="clr"></span>
                         </div>
                     </div>
 
@@ -149,25 +147,24 @@
                                 id=""></label>
                         </div>
                     </div>
-                    </div>
-					</div>
-                <div class="item item-new">
-                    <span class="label">&nbsp;</span>
+                </div>
+            </div>
+            <div class="item item-new">
+                <span class="label">&nbsp;</span>
 
-                    <div class="fl item-ifo">
-                        <input type="checkbox" class="checkbox" checked="checked" id="readme"
-                               onclick="agreeonProtocol();">
-                        <label for="protocol">我已阅读并同意<a href="#" class="blue" id="protocol">《鲜花用户注册协议》</a></label>
-                        <span class="clr"></span>
-                        <label id="protocol_error" class="error hide">请接受服务条款</label>
-                    </div>
+                <div class="fl item-ifo">
+                    <input type="checkbox" class="checkbox" checked="checked" id="readme"
+                           onclick="agreeonProtocol();">
+                    <label for="protocol">我已阅读并同意<a href="#" class="blue" id="protocol">《鲜花用户注册协议》</a></label>
+                    <span class="clr"></span>
+                    <label id="protocol_error" class="error hide">请接受服务条款</label>
                 </div>
-                <div class="item">
-                    <span class="label">&nbsp;</span>
-                    <input type="button" class="btn-img btn-regist" id="registsubmit" value="立即注册" tabindex="8"
-                           clstag="regist|keycount|personalreg|07"
-                           onclick="REGISTER.reg();"/>
-                </div>
+            </div>
+            <div class="item1">
+                <span class="label">&nbsp;</span>
+                <input type="button" class="btn-img btn-regist" id="registsubmit" value="立即注册" tabindex="8"
+                       clstag="regist|keycount|personalreg|07"
+                       onclick="REGISTER.reg();"/>
             </div>
             <span class="clr"></span>
         </form>
@@ -214,7 +211,7 @@
 				//检查用户是否已经被占用
                 var sortname = $("#sortname").val();
 				$.ajax({
-	            	url : "<%=basePath%>/user/selectById?sortname="+sortname,
+	            	url : "<%=basePath%>user/selectById?sortname="+sortname,
 	            	success : function(data) {
                         console.log(data)
 	            		if (data.length==0) {
@@ -227,7 +224,7 @@
 				});
 		},
 		doSubmit:function() {
-			$.post("<%=basePath%>/user/register",$("#personRegForm").serialize(), function(data){
+			$.post("<%=basePath%>user/register",$("#personRegForm").serialize(), function(data){
 			    console.log(data)
 				if(data.status == 200){
 					alert('用户注册成功，请登录！');
@@ -238,7 +235,7 @@
 			});
 		},
 		login:function() {
-			 location.href = "<%=basePath%>/user/showLogin";
+			 location.href = "<%=basePath%>user/showLogin";
 			 return false;
 		},
 		reg:function() {

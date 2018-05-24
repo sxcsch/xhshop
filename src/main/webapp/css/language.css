@@ -90,6 +90,7 @@
 }
 .wenList{
     width:95%;
+    height:150px;
     border-bottom:1px dashed red;
     padding:10px 0;
     box-sizing: border-box;

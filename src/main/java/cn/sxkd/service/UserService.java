@@ -20,18 +20,18 @@ public class UserService {
      * 保存用户信息
      */
     public void saveRegister(PageData pd)throws Exception{
-        TUser tUser = new TUser();
-        tUser.setUsersid(Integer.parseInt(pd.get("usersid").toString()));
-        tUser.setSortname(pd.get("sortname").toString());
-        tUser.setUsersaddrss(pd.get("usersaddrss").toString());
-        tUser.setUserpass(pd.get("userpass").toString());
-        tUser.setUsersemail(pd.get("usersemail").toString());
-        tUser.setUserspassquestion(pd.get("userspassquestion").toString());
-        tUser.setUsersphone(pd.get("usersphone").toString());
-        tUser.setUserstruename(pd.get("userstruename").toString());
-        tUser.setUserspassreply(pd.get("userspassreply").toString());
-        tUser.setUsersrepass(pd.get("usersrepass").toString());
-        daoSupport.save("TUserMapper.insertSelective",tUser);
+//        TUser tUser = new TUser();
+//        tUser.setUsersid(Integer.parseInt(pd.get("usersid").toString()));
+//        tUser.setSortname(pd.get("sortname").toString());
+//        tUser.setUsersaddrss(pd.get("usersaddrss").toString());
+//        tUser.setUserpass(pd.get("userpass").toString());
+//        tUser.setUsersemail(pd.get("usersemail").toString());
+//        tUser.setUserspassquestion(pd.get("userspassquestion").toString());
+//        tUser.setUsersphone(pd.get("usersphone").toString());
+//        tUser.setUserstruename(pd.get("userstruename").toString());
+//        tUser.setUserspassreply(pd.get("userspassreply").toString());
+//        tUser.setUsersrepass(pd.get("usersrepass").toString());
+        daoSupport.save("TUserMapper.insertSelective",pd);
     }
 
     /*

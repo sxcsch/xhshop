@@ -1,11 +1,7 @@
 package cn.sxkd.tool;
 
-import org.junit.Test;
 import sun.misc.BASE64Encoder;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 
 /**
  * Created by Administrator on 2018/5/7 0007.
