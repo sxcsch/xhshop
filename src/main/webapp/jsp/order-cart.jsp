@@ -31,9 +31,16 @@
 		{
 			var address = document.getElementById('address');
 			var s1 = document.getElementById('s1');
+			var index1=s1.selectedIndex;
+			var value1=s1.options[index1].value;
 			var s2 = document.getElementById('s2');
+            var index2=s2.selectedIndex;
+            var value2=s2.options[index2].value;
 			var s3 = document.getElementById('s3');
-			address.value = s1.value + s2.value + s3.value;
+            var index3=s3.selectedIndex;
+            var value3=s3.options[index3].value;
+			console.log(value1,value2,value3)
+			// address.innerHTML = value1 +''+ value2 +''+ value3;
 		}
 	</script>
 </head>	<body id="mainframe" onload="setup();preselect('陕西省');promptinfo();">
@@ -66,7 +73,7 @@
 				consigneeId="137617472" id="consignee_index_div_137617472">
 				<b></b>
 				<form id="orderForm" style="width: 100%" action="<%=basePath%>/order/create" method="post">
-					省：<select class="select" name="province" id="s1">
+					省：<select class="select" name="province" id="s1" style="margin-bottom:10px;">
 						<option></option>
 					</select>
 					市：<select class="select" name="city" id="s2">
@@ -74,9 +81,9 @@
 					</select>
 					县：<select class="select" name="town" id="s3">
 						<option></option>
-					</select>
+				</select></br>
 					街道地址：
-					<input type="text" style="width: 100%" id="take_info" name="take_info"/>
+					<input type="text" style="width: 100%;margin-top: 10px" id="take_info" name="take_info"/>
 				</form>
 
 			</div>
