@@ -135,6 +135,8 @@
 		t_orders a
 		where
 		a.status = 0
+		AND
+		a.user_id = #{user_id}
 	</select>
 
 	<!-- 修改 -->

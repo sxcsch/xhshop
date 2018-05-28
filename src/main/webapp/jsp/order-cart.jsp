@@ -25,7 +25,19 @@
 	<script type="text/javascript" src="<%=basePath%>/js/base.js"></script>
 	<script type="text/javascript" src="<%=basePath%>/js/order.common.js"></script>
 	<script type="text/javascript" src="<%=basePath%>/js/jquery.checkout.js"></script>
-</head>	<body id="mainframe">
+	<script type="text/javascript" src="<%=basePath%>/js/order.js"></script>
+	<script>
+		function promptinfo()
+		{
+			var address = document.getElementById('address');
+			var s1 = document.getElementById('s1');
+			var s2 = document.getElementById('s2');
+			var s3 = document.getElementById('s3');
+			address.value = s1.value + s2.value + s3.value;
+		}
+	</script>
+</head>	<body id="mainframe" onload="setup();preselect('陕西省');promptinfo();">
+
 <jsp:include page="commons/shortcut.jsp" />
 <!--shortcut end-->
 
@@ -54,6 +66,16 @@
 				consigneeId="137617472" id="consignee_index_div_137617472">
 				<b></b>
 				<form id="orderForm" style="width: 100%" action="<%=basePath%>/order/create" method="post">
+					省：<select class="select" name="province" id="s1">
+						<option></option>
+					</select>
+					市：<select class="select" name="city" id="s2">
+						<option></option>
+					</select>
+					县：<select class="select" name="town" id="s3">
+						<option></option>
+					</select>
+					街道地址：
 					<input type="text" style="width: 100%" id="take_info" name="take_info"/>
 				</form>
 

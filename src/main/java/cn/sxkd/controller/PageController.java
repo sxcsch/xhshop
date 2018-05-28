@@ -204,7 +204,10 @@ public class PageController extends BaseController {
     public ModelAndView orderMsg (){
         ModelAndView mv = this.getModelAndView();
         try {
-            List<PageData> order = orderService.findOrderByStatus(getPageData());
+            TUser tUser = getSessionUserName();
+            PageData gpd = getPageData();
+            gpd.put("user_id",tUser.getUsersid());
+            List<PageData> order = orderService.findOrderByStatus(gpd);
             if (order!=null&&order.size()>0){
                 for (PageData p:order) {
                     PageData pageData =new PageData();
@@ -215,7 +218,7 @@ public class PageController extends BaseController {
                     pageData.put("sortid",p.get("type_id"));
                     PageData types = typeService.findTypeById(pageData);
                     p.put("type",types);
-                    pageData.put("usersid",p.get("user_id"));
+                    pageData.put("usersId",p.get("user_id"));
                     TUser user = userService.selectByPrimaryKeyId(pageData);
                     p.put("user",user);
                 }

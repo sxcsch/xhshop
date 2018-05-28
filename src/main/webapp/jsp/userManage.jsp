@@ -88,6 +88,7 @@
                 <!--js 加载异步加载的左侧菜单 -->
                 <div id="menu">
                     <h3>我的交易</h3>
+                    <c:if test="${user.sortname=='admin'}">
                     <dl class="fore1">
                         <dt>
                             <a target="_blank" clstag="homepage|keycount|home2013|hdd" id="_MYJD_ordercenter" href="<%=basePath%>/user/showMyUser">我的信息</a>
@@ -103,6 +104,7 @@
                             <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="<%=basePath%>/page/goods">商品管理</a>
                         </dt>
                     </dl>
+                    </c:if>
                     <dl class="fore3">
                         <dt>
                             <a target="_blank" clstag="homepage|keycount|home2013|hyushou" id="_MYJD_yushou" href="<%=basePath%>/page/orderMsg" class="curr">订单查看</a>

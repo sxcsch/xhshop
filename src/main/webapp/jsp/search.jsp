@@ -52,7 +52,7 @@
 	</div>
 	<div class="p-price">
 		<i>鲜花价：</i>
-		<strong>￥<input type="text" name="price" value="${item.price}"/></strong>
+		<span><strong>￥<input style="border:none;" type="text" name="price" value="${item.price}"/></strong></span>
 	</div>
 	<div class="service">由爱上鲜花发货</div>
 	<div class="extra">

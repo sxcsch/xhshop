@@ -27,7 +27,7 @@
 <!-- header end -->
 <div class="w">
 	<div class="breadcrumb">
-		<strong>爱上鲜花 &gt;<a href="#">${pds.type.sortName }</a></strong>
+		<strong>爱上鲜花 &gt;<a href="<%=basePath%>">${pds.type.sortName }</a></strong>
 	</div>
 </div><!--breadcrumb end-->
 <div class="w">
@@ -42,7 +42,7 @@
 	<li id="summary-price">
 		<div class="dt">鲜花价：</div>
 		<div class="dd">
-			<strong class="p-price"  id="jd-price">￥<fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" value="${pds.price }"/> </strong>
+			<strong class="p-price"  id="jd-price">￥${pds.price }</strong>
 			<a id="notice-downp" href="#none" target="_blank" clstag="shangpin|keycount|product|jiangjia">(降价通知)</a>
 		</div>
 	</li>

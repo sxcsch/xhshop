@@ -127,7 +127,7 @@
         <!--js 加载异步加载的左侧菜单 -->
         <div id="menu">
             <h3>我的交易</h3>
-            <c:if test="user.id==1">
+            <c:if test="${user.sortname=='admin'}">
             <dl class="fore1">
                 <dt>
                     <a target="_blank" clstag="homepage|keycount|home2013|hdd" id="_MYJD_ordercenter" href="<%=basePath%>/user/showMyUser" class="curr">我的信息</a>

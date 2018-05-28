@@ -59,7 +59,7 @@
             </div>
         </div>
         <div class="free-regist">
-            <span><a href="/user/showRegister" clstag="passport|keycount|login|08">免费注册&gt;&gt;</a></span>
+            <span><a href="<%=basePath%>/user/showRegister" clstag="passport|keycount|login|08">免费注册&gt;&gt;</a></span>
         </div>
     </div>
 </form>
