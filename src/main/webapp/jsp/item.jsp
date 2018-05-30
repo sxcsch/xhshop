@@ -187,8 +187,13 @@
 </div>
 	<script type="text/javascript">
         function addOrder(id) {
-            var num = $('#buy-num').val();
-            window.location.href = "<%=basePath%>/order/showCart?goods_id="+id+"&amount="+num;
+			var r=confirm("是否加入购物车?如果未登录会跳转至登录页面。");
+			if (r==true){
+				var num = $('#buy-num').val();
+				window.location.href = "<%=basePath%>/order/showCart?goods_id="+id+"&amount="+num;
+			}else{
+
+			}
         }
 	</script>
 <!-- footer start -->

@@ -43,7 +43,7 @@
 			// address.innerHTML = value1 +''+ value2 +''+ value3;
 		}
 	</script>
-</head>	<body id="mainframe" onload="setup();preselect('陕西省');promptinfo();">
+</head>	<body id="mainframe" onload="setup();preselect('山西省');promptinfo();">
 
 <jsp:include page="commons/shortcut.jsp" />
 <!--shortcut end-->

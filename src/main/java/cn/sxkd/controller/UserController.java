@@ -159,4 +159,23 @@ public class UserController extends BaseController{
         }
         return map;
     }
+
+    @RequestMapping("/yesOrNo")
+    @ResponseBody
+    public Object yesOrNo(){
+        PageData pd = new PageData();
+        pd = this.getPageData();
+        Map<String,Object> map = new HashMap<String,Object>();
+        try{
+            TUser tUser = getSessionUserName();
+            if (tUser!=null){
+                map.put("status","200");
+            }else{
+                map.put("status","500");
+            }
+        }catch (Exception e){
+            logger.error(e);
+        }
+        return map;
+    }
 }
